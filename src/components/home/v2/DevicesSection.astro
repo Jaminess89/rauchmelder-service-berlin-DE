@@ -1,0 +1,113 @@
+---
+import Container from '@/components/Container.astro';
+
+const features = [
+  {
+    title: 'Geprüft nach DIN EN 14604',
+    text: 'Wir verbauen ausschließlich Geräte mit anerkannter Produktnorm – auf Wunsch mit Q-Label für erhöhte Qualitätsanforderungen.',
+    side: 'left',
+  },
+  {
+    title: '10-Jahres-Batterie',
+    text: 'Langlebige Festbatterien statt jährlichem Batteriewechsel – zuverlässig über die gesamte Gerätelebensdauer.',
+    side: 'left',
+  },
+  {
+    title: 'Passend zum Objekt',
+    text: 'Die Auswahl richtet sich nach Räumen, Wartungskonzept und Budget – nicht nach Lagerbestand.',
+    side: 'right',
+  },
+  {
+    title: 'Optional ferninspizierbar',
+    text: 'Für größere Bestände bieten wir auf Anfrage vernetzbare Melder an, die sich aus der Ferne prüfen lassen.',
+    side: 'right',
+  },
+];
+---
+
+<section id="qualitaet" class="py-14 md:py-20 lg:py-24 bg-[#F4F8FB] scroll-mt-24" aria-labelledby="devices-heading">
+  <Container>
+    <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+      <p class="inline-flex items-center justify-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+        Die eingesetzten Geräte
+        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+      </p>
+      <h2 id="devices-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
+        Welche Rauchmelder installieren wir?
+      </h2>
+      <p class="text-[16px] text-[#3D5068] leading-relaxed m-0">
+        Kein Gerät für alles: Wir wählen den Rauchwarnmelder passend zu Ihrem Objekt aus. Vier Dinge sind dabei für uns nicht verhandelbar.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 items-center max-w-5xl mx-auto">
+
+      {/* Callouts links */}
+      <ul class="flex flex-col gap-5 list-none p-0 m-0 order-2 lg:order-1">
+        {features.filter(f => f.side === 'left').map((f) => (
+          <li class="relative bg-white rounded-[18px] border border-[#DCE5EF] p-5 shadow-[0_6px_20px_rgba(6,43,74,0.05)] lg:text-right">
+            <span class="hidden lg:block absolute top-1/2 -right-[42px] w-[42px] h-[2px] bg-gradient-to-l from-[#63c62f]/70 to-transparent" aria-hidden="true"></span>
+            <h3 class="text-[16.5px] font-extrabold text-[#062B4A] mt-0 mb-1.5">{f.title}</h3>
+            <p class="text-[14px] text-[#3D5068] leading-relaxed m-0">{f.text}</p>
+          </li>
+        ))}
+      </ul>
+
+      {/* Zentrales Gerät */}
+      <div class="order-1 lg:order-2 flex justify-center">
+        <div class="relative">
+          <svg viewBox="0 0 260 260" class="w-[220px] sm:w-[260px] h-auto drop-shadow-[0_18px_36px_rgba(6,43,74,0.18)]" role="img" aria-label="Rauchwarnmelder mit Statusanzeige in Draufsicht">
+            <defs>
+              <radialGradient id="mk-face" cx="42%" cy="36%" r="80%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="70%" stop-color="#f6f8fa" />
+                <stop offset="100%" stop-color="#e3e9ef" />
+              </radialGradient>
+            </defs>
+            <circle cx="130" cy="130" r="122" fill="url(#mk-face)" stroke="#cfd9e3" stroke-width="3" />
+            <circle cx="130" cy="130" r="106" fill="none" stroke="#dde5ec" stroke-width="10" />
+            {/* Lüftungsschlitze */}
+            <g stroke="#b8c5d1" stroke-width="5" stroke-linecap="round">
+              <path d="M74 62 a94 94 0 0 1 34 -18" />
+              <path d="M152 44 a94 94 0 0 1 34 18" />
+              <path d="M48 130 a82 82 0 0 1 8 -30" />
+              <path d="M212 130 a82 82 0 0 0 -8 -30" />
+              <path d="M74 198 a94 94 0 0 0 34 18" />
+              <path d="M152 216 a94 94 0 0 0 34 -18" />
+            </g>
+            {/* Testfläche */}
+            <circle cx="130" cy="130" r="62" fill="#ffffff" stroke="#dbe3ea" stroke-width="3" />
+            <circle cx="130" cy="130" r="62" fill="none" stroke="#eef2f6" stroke-width="10" />
+            {/* Status-LED + Schallöffnung */}
+            <circle cx="130" cy="102" r="7" fill="#25b94b" stroke="#1a8f3a" stroke-width="2" />
+            <circle cx="130" cy="102" r="11" fill="none" stroke="#25b94b" stroke-width="1.6" opacity=".45" />
+            <g fill="#c3cedb">
+              <circle cx="112" cy="146" r="4" /><circle cx="130" cy="152" r="4" /><circle cx="148" cy="146" r="4" />
+            </g>
+          </svg>
+          {/* Badge */}
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap inline-flex items-center gap-1.5 bg-[#062B4A] text-white text-[12px] font-extrabold px-3.5 py-1.5 rounded-full shadow-lg">
+            <svg class="w-3.5 h-3.5 text-[#8FD97A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+            DIN EN 14604
+          </span>
+        </div>
+      </div>
+
+      {/* Callouts rechts */}
+      <ul class="flex flex-col gap-5 list-none p-0 m-0 order-3">
+        {features.filter(f => f.side === 'right').map((f) => (
+          <li class="relative bg-white rounded-[18px] border border-[#DCE5EF] p-5 shadow-[0_6px_20px_rgba(6,43,74,0.05)]">
+            <span class="hidden lg:block absolute top-1/2 -left-[42px] w-[42px] h-[2px] bg-gradient-to-r from-[#63c62f]/70 to-transparent" aria-hidden="true"></span>
+            <h3 class="text-[16.5px] font-extrabold text-[#062B4A] mt-0 mb-1.5">{f.title}</h3>
+            <p class="text-[14px] text-[#3D5068] leading-relaxed m-0">{f.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <p class="text-center text-[13.5px] text-[#5A7191] mt-10 mb-0">
+      Hersteller nennen wir Ihnen transparent im Angebot – abhängig von Verfügbarkeit und Anforderung Ihres Objekts.
+    </p>
+  </Container>
+</section>

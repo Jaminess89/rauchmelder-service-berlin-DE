@@ -1,0 +1,78 @@
+---
+import Container from '@/components/Container.astro';
+
+const zones = [
+  { label: 'Schlafzimmer', status: 'Pflicht', tone: 'duty', icon: '<path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18"/><path d="M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M8 10V8h8v2"/>' },
+  { label: 'Kinderzimmer', status: 'Pflicht', tone: 'duty', icon: '<rect x="4" y="10" width="7" height="7" rx="1"/><rect x="13" y="10" width="7" height="7" rx="1"/><rect x="8.5" y="3" width="7" height="7" rx="1"/><circle cx="7.5" cy="13.5" r=".4"/><path d="M16.5 13.5h.01M12 6.5h.01"/>' },
+  { label: 'Flur als Rettungsweg', status: 'Pflicht', tone: 'duty', icon: '<path d="M13 4h6v16h-6"/><path d="M13 4 5 6v12l8 2"/><path d="M15.5 12h.01"/><path d="M5 12h3"/>' },
+  { label: 'Wohn- & Aufenthaltsraum', status: 'Sinnvoll', tone: 'plus', icon: '<path d="M5 11a2 2 0 0 1 2 2v2h10v-2a2 2 0 1 1 4 0v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2z"/><path d="M7 11V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/>' },
+  { label: 'Küche', status: 'Sonderfall', tone: 'care', icon: '<path d="M4 11h16a8 8 0 0 1-16 0z"/><path d="M2 11h20"/><path d="m8 6 .5-2M12 6l.5-2M16 6l.5-2"/>' },
+];
+
+const toneStyles: Record<string, { badge: string; border: string; icon: string }> = {
+  duty: { badge: 'bg-[#EAF6E4] text-[#237010] border-[#63c62f]/40', border: 'border-[#63c62f]/50', icon: 'bg-[#062B4A] text-[#8FD97A]' },
+  plus: { badge: 'bg-[#EAF1F7] text-[#0B3A64] border-[#0B3A64]/20', border: 'border-[#DCE5EF]', icon: 'bg-[#EAF1F7] text-[#0B3A64]' },
+  care: { badge: 'bg-[#FDF6E5] text-[#8a6410] border-[#e7c96a]/50', border: 'border-[#e7c96a]/50', icon: 'bg-[#FDF6E5] text-[#8a6410]' },
+};
+---
+
+<section id="rauchmelderpflicht" class="py-14 md:py-20 lg:py-24 bg-white scroll-mt-24" aria-labelledby="duty-heading">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-start">
+
+      {/* Erklärtext */}
+      <div>
+        <p class="inline-flex items-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+          <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+          Rechtlicher Rahmen
+        </p>
+        <h2 id="duty-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-5">
+          Rauchmelderpflicht in Berlin – das sollten Eigentümer wissen
+        </h2>
+
+        <div class="flex flex-col gap-4 text-[15.5px] text-[#3D5068] leading-relaxed">
+          <p class="m-0">
+            <strong class="font-extrabold text-[#123B66]">Welche Räume betroffen sind:</strong> In Berlin schreibt § 48 der Bauordnung (BauO Bln) Rauchwarnmelder für Schlafräume und Kinderzimmer vor – sowie für Flure, über die Rettungswege führen. Die Pflicht gilt für Neubau und Bestand gleichermaßen.
+          </p>
+          <p class="m-0">
+            <strong class="font-extrabold text-[#123B66]">Wer für den Einbau verantwortlich ist:</strong> Die Ausstattung der Wohnung mit Rauchwarnmeldern liegt grundsätzlich bei den Eigentümerinnen und Eigentümern. Wer eine Wohnung vermietet, sollte die Pflicht also nicht den Mietern überlassen.
+          </p>
+          <p class="m-0">
+            <strong class="font-extrabold text-[#123B66]">Wer die Betriebsbereitschaft sichert:</strong> Wartung und Funktionsfähigkeit können im Einzelfall unterschiedlich geregelt sein – etwa zwischen Eigentümer, Bewohner oder beauftragtem Dienstleister. In der Praxis delegieren die meisten Vermieter und Verwaltungen das an einen Fachbetrieb, weil dann Prüfung und Nachweis aus einer Hand kommen.
+          </p>
+        </div>
+
+        <div class="mt-6 rounded-2xl border border-[#DCE5EF] bg-[#F4F8FB] px-5 py-4">
+          <p class="text-[13.5px] text-[#3D5068] leading-relaxed m-0">
+            Diese Übersicht ist eine allgemeine Einordnung und <strong class="font-bold text-[#123B66]">keine Rechtsberatung</strong>. Maßgeblich ist der aktuelle Gesetzestext: <a href="https://gesetze.berlin.de" target="_blank" rel="noopener noreferrer" class="font-bold text-[#0B3A64] underline decoration-[#63c62f] decoration-2 underline-offset-2 hover:text-[#25b94b]">§ 48 Bauordnung für Berlin (BauO Bln) auf gesetze.berlin.de</a>
+          </p>
+        </div>
+      </div>
+      {/* Pflicht-Zonen-Grafik */}
+      <div class="bg-[#F4F8FB] rounded-[22px] border border-[#DCE5EF] p-5 sm:p-7 shadow-[0_10px_30px_rgba(6,43,74,0.06)] lg:sticky lg:top-24">
+        <p class="text-[13px] font-extrabold tracking-[0.06em] uppercase text-[#5A7191] mb-4 mt-0">So sieht es in einer typischen Berliner Wohnung aus</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-5">
+          {zones.map((zone) => (
+            <div class={`flex flex-col gap-2.5 rounded-2xl border-2 bg-white p-4 ${toneStyles[zone.tone].border} ${zone.tone === 'care' ? 'sm:col-span-1 col-span-2 sm:max-w-none' : ''}`}>
+              <span class={`flex items-center justify-center w-10 h-10 rounded-xl ${toneStyles[zone.tone].icon}`} aria-hidden="true">
+                <svg class="w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={zone.icon} />
+              </span>
+              <p class="text-[13.5px] font-extrabold text-[#123B66] leading-tight m-0">{zone.label}</p>
+              <span class={`self-start text-[11px] font-extrabold px-2.5 py-1 rounded-full border ${toneStyles[zone.tone].badge}`}>{zone.status}</span>
+            </div>
+          ))}
+          {/* Legenden-Kachel für Küche */}
+          <div class="col-span-2 sm:col-span-1 rounded-2xl bg-[#062B4A] p-4 flex flex-col justify-between gap-2">
+            <p class="text-[12px] font-bold text-white/70 m-0">Küche = Sonderfall</p>
+            <p class="text-[12.5px] text-white/90 leading-snug m-0">Dampf und Kochgerüche können Fehlalarme auslösen. Hier prüfen wir die sinnvolle Lösung – z. B. Position außerhalb oder Hitzemelder.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-x-5 gap-y-2 pt-4 border-t border-[#DCE5EF]">
+          <span class="flex items-center gap-2 text-[12px] font-bold text-[#3D5068]"><span class="w-2.5 h-2.5 rounded-full bg-[#25b94b]"></span>Pflicht nach § 48 BauO Bln</span>
+          <span class="flex items-center gap-2 text-[12px] font-bold text-[#3D5068]"><span class="w-2.5 h-2.5 rounded-full bg-[#1AAAE6]"></span>Zusätzlich sinnvoll</span>
+          <span class="flex items-center gap-2 text-[12px] font-bold text-[#3D5068]"><span class="w-2.5 h-2.5 rounded-full bg-[#e7b93c]"></span>Individuell prüfen</span>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

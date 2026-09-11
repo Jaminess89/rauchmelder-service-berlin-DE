@@ -1,0 +1,147 @@
+---
+import Container from '@/components/Container.astro';
+
+const installPoints = [
+  'Bedarf und Räume gemeinsam erfassen',
+  'Montageposition nach Raum und Deckensituation bestimmen',
+  'Geeignete Rauchwarnmelder für Ihr Objekt auswählen',
+  'Fachgerecht montieren – sauber und beschädigungsfrei',
+  'Jede installierte Einheit digital dokumentieren',
+];
+
+const wartungPoints = [
+  'Funktion und Signalton testen',
+  'Position, Befestigung und Zustand prüfen',
+  'Gerätealter und Austauschzeitpunkt kontrollieren',
+  'Störungen erkennen und Maßnahmen festhalten',
+];
+
+const austauschPoints = [
+  'Fehlende Melder in Pflichteinheiten ergänzen',
+  'Defekte oder veraltete Geräte ersetzen',
+  'Vorhandene Geräte fachlich beurteilen',
+  'Nur austauschen, was wirklich nötig ist',
+];
+---
+
+<section id="service" class="py-14 md:py-20 lg:py-24 bg-white scroll-mt-24" aria-labelledby="services-heading">
+  <Container>
+    {/* Section Header */}
+    <div class="max-w-3xl mb-10 md:mb-14">
+      <p class="inline-flex items-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+        Unsere Leistungen
+      </p>
+      <h2 id="services-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
+        Rauchmelder Service in Berlin
+      </h2>
+      <p class="text-[16px] sm:text-[17.5px] text-[#3D5068] leading-relaxed">
+        MESSKLAR übernimmt Installation, Wartung, Kontrolle, Austausch und Nachrüstung Ihrer Rauchwarnmelder – von der einzelnen Mietwohnung bis zum Mehrfamilienhaus. Sie sagen uns, was Ihr Objekt braucht, wir kümmern uns um den Rest.
+      </p>
+    </div>
+
+    {/* Service-Cockpit */}
+    <div class="grid grid-cols-1 lg:grid-cols-[1.12fr_1fr] gap-5 md:gap-6 mb-6 md:mb-8">
+
+      {/* A – Installation (dominant) */}
+      <article id="installation" class="relative overflow-hidden rounded-[20px] bg-[#062B4A] text-white p-7 sm:p-9 lg:p-11 scroll-mt-28 shadow-[0_16px_44px_rgba(6,43,74,0.22)]">
+        <svg class="absolute -right-10 -bottom-10 w-[240px] h-[240px] text-white/[0.05] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4.5" /><path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
+        </svg>
+        <div class="flex items-center gap-4 mb-6">
+          <span class="flex items-center justify-center w-14 h-14 rounded-2xl bg-[#25b94b] shadow-[0_8px_20px_rgba(37,185,75,0.4)] shrink-0" aria-hidden="true">
+            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="10" r="6.2" /><circle cx="12" cy="10" r="2.4" /><path d="M8.2 19.5h7.6M12 16.2v3.3" /><path d="M5.5 4.5l1.5 1.5M18.5 4.5 17 6" />
+            </svg>
+          </span>
+          <div>
+            <p class="text-[12px] font-extrabold tracking-[0.14em] text-[#8FD97A] uppercase mb-0.5">Modul 01</p>
+            <h3 class="text-[22px] sm:text-[26px] font-extrabold leading-tight m-0">Installation</h3>
+          </div>
+        </div>
+        <p class="text-[15.5px] sm:text-[16.5px] text-white/85 leading-relaxed mb-6 max-w-[46ch]">
+          Rauchmelder in Berlin fachgerecht installieren lassen: Wir planen die Ausstattung Ihrer Wohnung oder Ihres Hauses so, dass jeder Pflichtbereich abgedeckt ist – ohne überflüssige Geräte.
+        </p>
+        <ul class="flex flex-col gap-3 list-none p-0 m-0 mb-7">
+          {installPoints.map((point) => (
+            <li class="flex items-start gap-3 text-[14.5px] sm:text-[15.5px] font-semibold text-white/90 leading-snug">
+              <svg class="w-5 h-5 shrink-0 mt-[1px] text-[#63c62f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+              {point}
+            </li>
+          ))}
+        </ul>
+        <a href="#ersteinschaetzung" class="inline-flex items-center gap-2 text-[15px] font-extrabold text-[#8FD97A] hover:text-white no-underline transition-colors group">
+          Installation anfragen
+          <svg class="w-[18px] h-[18px] transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+        </a>
+      </article>
+      {/* Rechte Spalte: B + C gestaffelt */}
+      <div class="flex flex-col gap-5 md:gap-6">
+
+        {/* B – Wartung & Kontrolle */}
+        <article id="wartung" class="relative rounded-[20px] bg-white border border-[#DCE5EF] p-6 sm:p-8 scroll-mt-28 shadow-[0_8px_26px_rgba(6,43,74,0.06)] hover:shadow-[0_14px_36px_rgba(6,43,74,0.11)] hover:-translate-y-0.5 transition-all">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#EAF1F7] shrink-0" aria-hidden="true">
+              <svg class="w-6 h-6 text-[#0B3A64]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="5.4" /><circle cx="11" cy="11" r="2" /><path d="m15.8 15.8 4 4" /><path d="M19.5 9.5a8.5 8.5 0 1 1-2.4-5" stroke="#25b94b" />
+              </svg>
+            </span>
+            <div>
+              <p class="text-[11.5px] font-extrabold tracking-[0.14em] text-[#2f7a12] uppercase mb-0.5">Modul 02</p>
+              <h3 class="text-[19px] sm:text-[21px] font-extrabold text-[#062B4A] leading-tight m-0">Wartung &amp; Kontrolle</h3>
+            </div>
+          </div>
+          <p class="text-[14.5px] text-[#3D5068] leading-relaxed mb-4">
+            Rauchmelder warten und kontrollieren lassen – mit klarer Rückmeldung, welche Geräte in Ordnung sind und wo Handlungsbedarf besteht.
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 list-none p-0 m-0">
+            {wartungPoints.map((point) => (
+              <li class="flex items-start gap-2.5 text-[13.5px] sm:text-[14px] font-semibold text-[#123B66] leading-snug">
+                <svg class="w-[18px] h-[18px] shrink-0 mt-[1px] text-[#25b94b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </article>
+
+        {/* C – Austausch & Nachrüstung */}
+        <article class="relative rounded-[20px] bg-white border border-[#DCE5EF] p-6 sm:p-8 shadow-[0_8px_26px_rgba(6,43,74,0.06)] hover:shadow-[0_14px_36px_rgba(6,43,74,0.11)] hover:-translate-y-0.5 transition-all">
+          <div class="flex items-center gap-4 mb-4">
+            <span class="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#EAF1F7] shrink-0" aria-hidden="true">
+              <svg class="w-6 h-6 text-[#0B3A64]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="2.6" /><path d="M7 16a6 6 0 0 1-1.2-3.6" /><path d="M5 5.4A6 6 0 0 1 7.6 4" stroke="#25b94b" /><path d="m4 3 1 2.4 2.4-1" stroke="#25b94b" /><path d="M17 8a6 6 0 0 1 1.2 3.6" /><path d="M19 18.6a6 6 0 0 1-2.6 1.4" stroke="#25b94b" /><path d="m20 21-1-2.4-2.4 1" stroke="#25b94b" />
+              </svg>
+            </span>
+            <div>
+              <p class="text-[11.5px] font-extrabold tracking-[0.14em] text-[#2f7a12] uppercase mb-0.5">Modul 03</p>
+              <h3 class="text-[19px] sm:text-[21px] font-extrabold text-[#062B4A] leading-tight m-0">Austausch &amp; Nachrüstung</h3>
+            </div>
+          </div>
+          <p class="text-[14.5px] text-[#3D5068] leading-relaxed mb-4">
+            Fehlende Rauchmelder nachrüsten, defekte ersetzen – ältere Geräte beurteilen wir ehrlich, statt pauschal alles zu erneuern.
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 list-none p-0 m-0">
+            {austauschPoints.map((point) => (
+              <li class="flex items-start gap-2.5 text-[13.5px] sm:text-[14px] font-semibold text-[#123B66] leading-snug">
+                <svg class="w-[18px] h-[18px] shrink-0 mt-[1px] text-[#25b94b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+                {point}
+              </li>
+            ))}
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    {/* USP-Band */}
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 rounded-[18px] bg-[#EAF6E4] border border-[#63c62f]/35 px-6 py-5 sm:px-8">
+      <span class="flex items-center justify-center w-11 h-11 rounded-full bg-[#25b94b] shrink-0" aria-hidden="true">
+        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z" /><path d="m9 11.5 2.2 2.2L15.5 9.4" /></svg>
+      </span>
+      <div>
+        <p class="text-[16.5px] sm:text-[18px] font-extrabold text-[#123B66] leading-snug m-0">Wir prüfen zuerst – und tauschen nur aus, was wirklich nötig ist.</p>
+        <p class="text-[14px] sm:text-[14.5px] text-[#3D5068] mt-1 m-0">So vermeiden Sie unnötige Gerätekäufe und zahlen nur für das, was Ihr Objekt tatsächlich braucht.</p>
+      </div>
+    </div>
+    </div>
+  </Container>
+</section>

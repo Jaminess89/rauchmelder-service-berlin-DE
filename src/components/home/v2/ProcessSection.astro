@@ -1,0 +1,72 @@
+---
+import Container from '@/components/Container.astro';
+
+const steps = [
+  {
+    title: 'Anfrage senden',
+    text: 'Beschreiben Sie kurz Ihr Objekt und die gewünschte Leistung – grobe Angaben reichen. Online übers Formular oder direkt am Telefon.',
+    icon: '<path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/>',
+  },
+  {
+    title: 'Termin und Objekt abstimmen',
+    text: 'Wir melden uns persönlich, klären offene Fragen und finden einen verbindlichen Termin – auf Wunsch direkt mit Ihren Mietern koordiniert.',
+    icon: '<rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3 9.5h18"/><path d="m10.5 14.5 1.8 1.8 3.2-3.6"/>',
+  },
+  {
+    title: 'Installation oder Wartung durchführen',
+    text: 'Wir montieren und prüfen sauber und zügig – und sagen Ihnen offen, wenn etwas nicht gemacht werden muss.',
+    icon: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+  },
+  {
+    title: 'Dokumentation erhalten',
+    text: 'Sie erhalten Ihr digitales Protokoll: alle Geräte, alle Ergebnisse, alle Maßnahmen – inklusive Hinweis zum nächsten Termin.',
+    icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/>',
+  },
+];
+---
+
+<section id="ablauf" class="py-14 md:py-20 lg:py-24 bg-[#F4F8FB] scroll-mt-24" aria-labelledby="process-heading">
+  <Container>
+    <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+      <p class="inline-flex items-center justify-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+        Der Ablauf
+        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+      </p>
+      <h2 id="process-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
+        Rauchmelder installieren oder prüfen lassen – so einfach geht es
+      </h2>
+      <p class="text-[16px] text-[#3D5068] leading-relaxed m-0">
+        Vier Schritte von der Anfrage bis zum fertigen Protokoll. Sie müssen sich um nichts kümmern – außer uns kurz Ihr Objekt zu beschreiben.
+      </p>
+    </div>
+
+    {/* Timeline */}
+    <ol class="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 md:gap-8 list-none p-0 m-0">
+      {/* Verbindungslinie (Desktop) */}
+      <div class="hidden xl:block absolute top-[27px] left-[12.5%] right-[12.5%] h-[3px] rounded-full bg-gradient-to-r from-[#63c62f]/60 via-[#DCE5EF] to-[#DCE5EF]" aria-hidden="true"></div>
+      {/* Verbindungslinie (nur Mobile, einspaltig) */}
+      <div class="md:hidden absolute top-2 bottom-2 left-[27px] w-[3px] rounded-full bg-gradient-to-b from-[#63c62f]/60 via-[#DCE5EF] to-[#DCE5EF]" aria-hidden="true"></div>
+
+      {steps.map((step, i) => (
+        <li class="relative flex xl:flex-col gap-5 xl:gap-0 xl:items-center xl:text-center">
+          <span class="relative z-10 flex items-center justify-center w-14 h-14 rounded-2xl bg-[#062B4A] shadow-[0_10px_24px_rgba(6,43,74,0.3)] shrink-0 xl:mb-5" aria-hidden="true">
+            <svg class="w-[26px] h-[26px] text-[#8FD97A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={step.icon} />
+            <span class="absolute -top-2 -right-2 flex items-center justify-center w-6 h-6 rounded-full bg-[#25b94b] text-white text-[12px] font-black border-2 border-[#F4F8FB]">{i + 1}</span>
+          </span>
+          <div class="xl:px-3 pt-1 xl:pt-0">
+            <h3 class="text-[18px] sm:text-[19px] font-extrabold text-[#062B4A] leading-snug mt-0 mb-2">{step.title}</h3>
+            <p class="text-[14px] sm:text-[14.5px] text-[#3D5068] leading-relaxed m-0">{step.text}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="text-center mt-12">
+      <a href="#ersteinschaetzung" class="inline-flex items-center gap-2.5 bg-[#25b94b] hover:bg-[#1fa343] text-white text-[16px] font-extrabold px-7 py-[14px] rounded-xl no-underline transition-all shadow-[0_10px_24px_rgba(37,185,75,0.3)] hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#062B4A]">
+        Schritt 1 jetzt starten – Anfrage senden
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+      </a>
+    </div>
+  </Container>
+</section>

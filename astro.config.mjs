@@ -84,5 +84,14 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      watch: {
+        // The Cloudflare adapter's dev runtime (workerd/miniflare) writes
+        // observability traces to .wrangler/state/*.sqlite(-wal) every second.
+        // Without this ignore, Vite treats each write as a file change and
+        // force-reloads the page in the browser in a ~1s loop.
+        ignored: ['**/.wrangler/**'],
+      },
+    },
   },
 });

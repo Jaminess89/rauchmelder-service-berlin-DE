@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# Astro generated types/cache
+.astro/
+
+# Cloudflare adapter dev state (workerd/miniflare)
+.wrangler/
+
+# environment variables
+.env
+.env.production
+
+# logs
+npm-debug.log*
+pnpm-debug.log*
+
+# macOS
+.DS_Store

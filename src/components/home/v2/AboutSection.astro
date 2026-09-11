@@ -1,0 +1,94 @@
+---
+import Container from '@/components/Container.astro';
+
+const points = [
+  {
+    title: 'Ein Ansprechpartner, keine Hotline',
+    text: 'Sie sprechen mit den Menschen, die auch zu Ihnen vor Ort kommen – nicht mit einem Callcenter.',
+    icon: '<circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>',
+  },
+  {
+    title: 'Direkt erreichbar',
+    text: 'Mo–Fr von 8.00 bis 18.30 Uhr unter 030 9210 5026 – oder schriftlich über das Anfrageformular.',
+    icon: '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+  },
+  {
+    title: 'Aus Berlin, für Berlin',
+    text: 'Wir arbeiten in der ganzen Stadt – kurze Wege, realistische Termine, keine anonyme Zentrale.',
+    icon: '<path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/>',
+  },
+  {
+    title: 'Ehrliche Beurteilung',
+    text: 'Vorhandene Geräte werden zuerst geprüft. Was funktioniert, bleibt – was nicht, wird begründet ersetzt.',
+    icon: '<circle cx="11" cy="11" r="6.5"/><path d="m20.5 20.5-4.6-4.6"/><path d="m8.2 11.2 2 2 3.6-4.2"/>',
+  },
+  {
+    title: 'Saubere Montage',
+    text: 'Sorgfältiges Arbeiten auch bei Altbau, Stuck und hohen Decken – und aufgeräumt wird hinterher auch.',
+    icon: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+  },
+  {
+    title: 'Nachvollziehbare Ergebnisse',
+    text: 'Jede Installation und Prüfung endet in einer digitalen Dokumentation, die Sie dauerhaft ablegen können.',
+    icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/>',
+  },
+];
+---
+
+<section id="ansprechpartner" class="py-14 md:py-20 lg:py-24 bg-white scroll-mt-24" aria-labelledby="about-heading">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-center">
+
+      {/* Foto-Spalte */}
+      <div class="relative order-2 lg:order-1">
+        <div class="rounded-[22px] overflow-hidden shadow-[0_20px_50px_rgba(6,43,74,0.14)] ring-1 ring-[#0B3A64]/10">
+          <picture>
+            <source type="image/avif" srcset="/images/rauchmelder-wartung-berlin-320.avif 320w, /images/rauchmelder-wartung-berlin-480.avif 480w, /images/rauchmelder-wartung-berlin-640.avif 640w" sizes="(max-width: 1024px) 100vw, 45vw" />
+            <img
+              src="/images/rauchmelder-wartung-berlin-640.webp"
+              srcset="/images/rauchmelder-wartung-berlin-320.webp 320w, /images/rauchmelder-wartung-berlin-480.webp 480w, /images/rauchmelder-wartung-berlin-640.webp 640w"
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              width="640"
+              height="473"
+              alt="MESSKLAR-Mitarbeiter bespricht mit einem Eigentümer die Position eines Rauchmelders an der Wohnungsdecke"
+              class="w-full h-auto object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div class="absolute -bottom-5 right-4 sm:right-6 bg-[#062B4A] text-white rounded-2xl shadow-[0_14px_36px_rgba(6,43,74,0.3)] px-5 py-3.5 max-w-[280px]">
+          <p class="text-[13px] font-bold leading-snug m-0">Begehung vor Ort: Wir erklären, was wir tun – bevor wir es tun.</p>
+        </div>
+      </div>
+
+      {/* Copy */}
+      <div class="order-1 lg:order-2">
+        <p class="inline-flex items-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+          <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+          Warum MESSKLAR
+        </p>
+        <h2 id="about-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
+          Persönlicher Rauchmelderservice in Berlin
+        </h2>
+        <p class="text-[16px] text-[#3D5068] leading-relaxed mb-8">
+          MESSKLAR ist ein lokaler Fachbetrieb – kein Vermittlungsportal und keine anonyme Servicenummer. Bei uns wissen Sie, wer kommt, was gemacht wird und was es kostet.
+        </p>
+
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5 list-none p-0 m-0">
+          {points.map((point) => (
+            <li class="flex gap-3.5">
+              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#EAF1F7] shrink-0" aria-hidden="true">
+                <svg class="w-[22px] h-[22px] text-[#0B3A64]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={point.icon} />
+              </span>
+              <div>
+                <p class="text-[15px] font-extrabold text-[#123B66] m-0 leading-snug">{point.title}</p>
+                <p class="text-[13.5px] text-[#3D5068] m-0 mt-1 leading-relaxed">{point.text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Container>
+</section>

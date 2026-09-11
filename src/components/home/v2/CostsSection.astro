@@ -1,0 +1,65 @@
+---
+import Container from '@/components/Container.astro';
+
+const items = [
+  {
+    title: 'Ersteinbau',
+    badge: 'Modernisierung',
+    badgeClass: 'bg-[#EAF1F7] text-[#0B3A64] border-[#0B3A64]/20',
+    text: 'Die erstmalige Ausstattung einer Wohnung mit Rauchwarnmeldern wird rechtlich als Modernisierung eingeordnet. Unter den gesetzlichen Voraussetzungen kann dafür eine Mieterhöhung zulässig sein.',
+    icon: '<circle cx="12" cy="10" r="6.2" /><circle cx="12" cy="10" r="2.4" /><path d="M12 16.2v3.3M8.2 19.5h7.6" />',
+  },
+  {
+    title: 'Wartung & Prüfung',
+    badge: 'Umlage grundsätzlich möglich',
+    badgeClass: 'bg-[#EAF6E4] text-[#237010] border-[#63c62f]/40',
+    text: 'Laufende Kosten für Wartung und Prüfung können als Betriebskosten auf Mieter umgelegt werden – sofern das im Mietvertrag entsprechend vereinbart ist.',
+    icon: '<circle cx="11" cy="11" r="5.4" /><path d="m15.8 15.8 4 4" /><path d="m8.2 11.2 2 2 3.6-4.2" />',
+  },
+  {
+    title: 'Gerätemiete',
+    badge: 'Nicht umlagefähig',
+    badgeClass: 'bg-[#FDF0EF] text-[#a33327] border-[#e5a49e]/50',
+    text: 'Reine Mietkosten für Rauchwarnmelder dürfen dagegen nicht auf Mieter umgelegt werden – so hat es der Bundesgerichtshof entschieden (BGH, Az. VIII ZR 379/20).',
+    icon: '<circle cx="12" cy="12" r="8.5" /><path d="M12 7.5v5l3 2.5" />',
+  },
+];
+---
+
+<section id="kosten" class="py-14 md:py-20 lg:py-24 bg-[#F4F8FB] scroll-mt-24" aria-labelledby="costs-heading">
+  <Container>
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-8 md:mb-10">
+        <p class="inline-flex items-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+          <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+          Kompakt erklärt
+        </p>
+        <h2 id="costs-heading" class="font-heading text-[26px] sm:text-[32px] lg:text-[36px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-3">
+          Rauchmelder-Kosten für Vermieter
+        </h2>
+        <p class="text-[15.5px] text-[#3D5068] leading-relaxed m-0">
+          Drei Kostenarten, drei unterschiedliche Regeln – das Wichtigste in Kürze:
+        </p>
+      </div>
+
+      <ul class="flex flex-col gap-4 list-none p-0 m-0 mb-5">
+        {items.map((item) => (
+          <li class="flex flex-col sm:flex-row sm:items-center gap-4 bg-white rounded-[18px] border border-[#DCE5EF] p-5 sm:p-6 shadow-[0_6px_20px_rgba(6,43,74,0.05)]">
+            <span class="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#EAF1F7] shrink-0" aria-hidden="true">
+              <svg class="w-6 h-6 text-[#0B3A64]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon} />
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="text-[16.5px] font-extrabold text-[#062B4A] m-0 mb-1">{item.title}</p>
+              <p class="text-[14px] text-[#3D5068] leading-relaxed m-0">{item.text}</p>
+            </div>
+            <span class={`self-start sm:self-center text-[11.5px] font-extrabold px-3 py-1.5 rounded-full border whitespace-nowrap ${item.badgeClass}`}>{item.badge}</span>
+          </li>
+        ))}
+      </ul>
+
+      <p class="text-[12.5px] text-[#5A7191] leading-relaxed m-0">
+        Hinweis: Ob und wie Kosten umgelegt werden können, hängt von Maßnahme, Mietvertrag und den gesetzlichen Voraussetzungen ab. Diese Übersicht ersetzt keine Rechtsberatung.
+      </p>
+    </div>
+  </Container>
+</section>

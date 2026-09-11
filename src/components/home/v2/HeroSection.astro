@@ -1,0 +1,119 @@
+---
+import Container from '@/components/Container.astro';
+
+const trustPoints = [
+  'Fachgerechte Installation und Prüfung',
+  'Vorhandene Rauchmelder zuerst prüfen',
+  'Digitale Dokumentation',
+  'Transparente Kosteneinschätzung',
+];
+---
+
+<section class="relative overflow-hidden bg-gradient-to-b from-[#F4F8FB] via-white to-white" aria-label="Rauchmelderservice Berlin">
+  {/* Dezente technische Hintergrundgrafik */}
+  <svg class="absolute top-0 right-0 w-[560px] max-w-[60vw] h-auto text-[#0B3A64]/[0.05] pointer-events-none select-none" viewBox="0 0 560 400" fill="none" aria-hidden="true">
+    <path d="M60 400V120h180v280M240 180h160v220M400 100h120v300" stroke="currentColor" stroke-width="22" stroke-linejoin="round" />
+    <circle cx="150" cy="70" r="34" stroke="currentColor" stroke-width="14" />
+    <circle cx="460" cy="52" r="24" stroke="currentColor" stroke-width="12" />
+  </svg>
+
+  <Container class="relative z-10 pt-10 pb-14 sm:pt-14 md:pt-16 lg:pt-[72px] md:pb-20 lg:pb-[88px]">
+    <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 xl:gap-16 items-center">
+
+      {/* Linke Spalte: Copy */}
+      <div class="max-w-[620px]">
+        <p class="inline-flex items-center gap-2 rounded-full bg-[#EAF6E4] border border-[#63c62f]/30 px-4 py-1.5 text-[12.5px] sm:text-[13px] font-extrabold tracking-wide text-[#2f7a12] uppercase mb-5">
+          <span class="w-2 h-2 rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+          Ihr Fachbetrieb in Berlin
+        </p>
+
+        <h1 class="font-heading text-[30px] sm:text-[38px] lg:text-[44px] xl:text-[50px] font-black leading-[1.12] tracking-tight text-[#062B4A] mb-5">
+          Rauchmelderservice Berlin – <span class="text-[#25b94b]">Installation, Wartung</span> &amp; Prüfung
+        </h1>
+
+        <p class="text-[16px] sm:text-[18px] lg:text-[19px] leading-relaxed text-[#3D5068] mb-7">
+          Rauchmelder fachgerecht installieren, prüfen oder austauschen lassen – für Vermieter, Eigentümer und Hausverwaltungen in Berlin. Inklusive digitaler Dokumentation und auf Wunsch Bewohnerkoordination.
+        </p>
+
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mb-8 list-none p-0 m-0">
+          {trustPoints.map((point) => (
+            <li class="flex items-start gap-2.5 text-[14.5px] sm:text-[15.5px] font-bold text-[#123B66] leading-snug">
+              <svg class="w-[22px] h-[22px] shrink-0 mt-[1px]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="#EAF6E4" stroke="#63c62f" stroke-width="1.6" />
+                <path d="m8 12.2 2.6 2.6L16.4 9" stroke="#25b94b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              {point}
+            </li>
+          ))}
+        </ul>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3.5 mb-4">
+          <a
+            href="#ersteinschaetzung"
+            class="inline-flex items-center justify-center gap-2.5 bg-[#25b94b] hover:bg-[#1fa343] text-white text-[16.5px] sm:text-[17.5px] font-extrabold px-7 py-[15px] rounded-xl no-underline transition-all shadow-[0_10px_24px_rgba(37,185,75,0.35)] hover:shadow-[0_14px_30px_rgba(37,185,75,0.42)] hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#062B4A]"
+          >
+            Kostenlos anfragen
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+          </a>
+          <a
+            href="tel:+493092105026"
+            class="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-[#F4F8FB] text-[#062B4A] text-[16.5px] sm:text-[17.5px] font-extrabold px-7 py-[15px] rounded-xl no-underline border-2 border-[#0B3A64]/15 hover:border-[#0B3A64]/30 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#062B4A]"
+          >
+            <svg class="w-5 h-5 text-[#25b94b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+            030 9210 5026
+          </a>
+        </div>
+        <p class="text-[13px] sm:text-[13.5px] text-[#6B7C92] font-medium">Kostenlos · unverbindlich · persönliche Rückmeldung</p>
+      </div>
+
+      {/* Rechte Spalte: Foto + Status-Chips */}
+      <div class="relative">
+        <div class="relative rounded-[22px] overflow-hidden shadow-[0_24px_60px_rgba(6,43,74,0.18)] ring-1 ring-[#0B3A64]/10 h-[300px] sm:h-[400px] lg:h-[520px]">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="/images/rauchmelder-installation-berlin-640.avif 640w, /images/rauchmelder-installation-berlin-768.avif 768w, /images/rauchmelder-installation-berlin-1024.avif 1024w, /images/rauchmelder-installation-berlin-1536.avif 1536w"
+              sizes="(max-width: 1024px) 100vw, 48vw"
+            />
+            <img
+              src="/images/rauchmelder-installation-berlin-1024.webp"
+              srcset="/images/rauchmelder-installation-berlin-640.webp 640w, /images/rauchmelder-installation-berlin-768.webp 768w, /images/rauchmelder-installation-berlin-1024.webp 1024w, /images/rauchmelder-installation-berlin-1536.webp 1536w"
+              sizes="(max-width: 1024px) 100vw, 48vw"
+              width="1536"
+              height="1170"
+              alt="Techniker von MESSKLAR montiert einen Rauchwarnmelder an der Zimmerdecke einer Berliner Wohnung"
+              class="w-full h-full object-cover object-center"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#062B4A]/25 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+        </div>
+
+        {/* Floating Status-Chips */}
+        <div class="absolute top-4 left-4 sm:top-5 sm:left-5 flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full pl-2 pr-3.5 py-1.5 shadow-[0_6px_18px_rgba(6,43,74,0.16)]" aria-hidden="true">
+          <span class="flex items-center justify-center w-6 h-6 rounded-full bg-[#25b94b]">
+            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+          </span>
+          <span class="text-[12.5px] sm:text-[13px] font-extrabold text-[#062B4A]">Installation</span>
+        </div>
+
+        <div class="absolute bottom-16 right-4 sm:bottom-20 sm:right-5 flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full pl-2 pr-3.5 py-1.5 shadow-[0_6px_18px_rgba(6,43,74,0.16)]" aria-hidden="true">
+          <span class="flex items-center justify-center w-6 h-6 rounded-full bg-[#1AAAE6]">
+            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36" /><path d="M21 3v6h-6" /></svg>
+          </span>
+          <span class="text-[12.5px] sm:text-[13px] font-extrabold text-[#062B4A]">Wartung</span>
+        </div>
+
+        <div class="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 flex items-center gap-2 bg-white/95 backdrop-blur-sm rounded-full pl-2 pr-3.5 py-1.5 shadow-[0_6px_18px_rgba(6,43,74,0.16)]" aria-hidden="true">
+          <span class="flex items-center justify-center w-6 h-6 rounded-full bg-[#062B4A]">
+            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="m9 15 2 2 4-4" /></svg>
+          </span>
+          <span class="text-[12.5px] sm:text-[13px] font-extrabold text-[#062B4A]">Dokumentation</span>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</section>

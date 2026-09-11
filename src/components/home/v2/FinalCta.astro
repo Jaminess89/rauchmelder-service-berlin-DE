@@ -1,0 +1,61 @@
+---
+import Container from '@/components/Container.astro';
+import InquiryForm from '@/components/home/v2/InquiryForm.astro';
+
+const usps = [
+  'Persönliche Rückmeldung statt Standardtext',
+  'Nachvollziehbares Angebot vor der Beauftragung',
+  'Vorhandene Geräte werden zuerst geprüft',
+];
+---
+
+<section id="anfrage" class="py-14 md:py-20 lg:py-24 bg-[#F4F8FB] scroll-mt-24" aria-labelledby="final-heading">
+  <Container>
+    <div class="relative overflow-hidden rounded-[26px] shadow-[0_28px_70px_rgba(4,29,53,0.35)]" style="background: linear-gradient(150deg, #041D35 0%, #062B4A 60%, #0B3A64 100%);">
+      {/* Dekoratives Melder-Motiv */}
+      <svg class="absolute -right-14 -top-14 w-[300px] h-[300px] text-white/[0.045] pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1.6" />
+      </svg>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1.02fr] gap-10 lg:gap-12 p-6 sm:p-10 lg:p-14">
+
+        {/* Copy + Kontaktwege */}
+        <div class="flex flex-col justify-center">
+          <h2 id="final-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-white leading-[1.15] mb-4 mt-0">
+            Rauchmelder in Berlin installieren oder prüfen lassen
+          </h2>
+          <p class="text-[16px] sm:text-[17px] text-[#B9CBDE] leading-relaxed mb-7">
+            Schildern Sie kurz Ihr Objekt und die gewünschte Leistung. Wir melden uns persönlich mit den nächsten Schritten – ohne Verkaufsdruck und ohne Fachchinesisch.
+          </p>
+
+          <ul class="flex flex-col gap-3 list-none p-0 m-0 mb-8">
+            {usps.map((usp) => (
+              <li class="flex items-start gap-3 text-[15px] font-bold text-white/90 leading-snug">
+                <svg class="w-5 h-5 shrink-0 mt-[1px] text-[#63c62f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+                {usp}
+              </li>
+            ))}
+          </ul>
+
+          <div class="rounded-2xl bg-white/[0.06] border border-white/10 p-5">
+            <p class="text-[13px] font-bold text-[#8FA6BF] uppercase tracking-[0.06em] mb-2 mt-0">Lieber direkt sprechen?</p>
+            <a href="tel:+493092105026" class="inline-flex items-center gap-3 text-white hover:text-[#8FD97A] no-underline transition-colors group">
+              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-[#25b94b] group-hover:bg-[#1fa343] transition-colors shrink-0" aria-hidden="true">
+                <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span class="text-[24px] sm:text-[28px] font-black tracking-tight">030 9210 5026</span>
+            </a>
+            <p class="text-[13px] text-[#8FA6BF] mt-2 mb-0">Montag bis Freitag, 8.00–18.30 Uhr</p>
+          </div>
+        </div>
+
+        {/* Formular-Card */}
+        <div class="bg-white rounded-[20px] p-6 sm:p-8 shadow-[0_20px_50px_rgba(2,16,32,0.35)]">
+          <h3 class="font-heading text-[20px] sm:text-[22px] font-extrabold text-[#062B4A] leading-tight mb-1.5 mt-0">Unverbindliche Anfrage</h3>
+          <p class="text-[14px] text-[#3D5068] mb-5 leading-relaxed">Grobe Angaben reichen – den Rest klären wir gemeinsam.</p>
+          <InquiryForm prefix="kontakt" />
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

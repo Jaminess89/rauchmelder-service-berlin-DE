@@ -1,0 +1,68 @@
+---
+import Container from '@/components/Container.astro';
+import InquiryForm from '@/components/home/v2/InquiryForm.astro';
+
+const factors = [
+  { title: 'Anzahl der Rauchwarnmelder', text: 'Mehr Geräte bedeuten mehr Montage- bzw. Prüfaufwand.' },
+  { title: 'Anzahl der Wohnungen', text: 'Einzelwohnung, Wohnungspaket oder ganzes Mehrfamilienhaus.' },
+  { title: 'Vorhandene Geräte', text: 'Bestand, Alter und Zustand entscheiden, was weiterverwendet werden kann.' },
+  { title: 'Installation oder Wartung', text: 'Erstmontage, regelmäßige Prüfung oder Austausch einzelner Melder.' },
+  { title: 'Montageaufwand', text: 'Deckenhöhe, Untergrund und Erreichbarkeit vor Ort.' },
+];
+---
+
+<section id="ersteinschaetzung" class="py-14 md:py-20 lg:py-24 bg-[#F4F8FB] scroll-mt-24" aria-labelledby="pricing-heading">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-10 lg:gap-14 items-start">
+
+      {/* Linke Spalte: Preisorientierung */}
+      <div class="lg:pt-2">
+        <p class="inline-flex items-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+          <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+          Preise &amp; Anfrage
+        </p>
+        <h2 id="pricing-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
+          Was kostet Rauchmelder-Service in Berlin?
+        </h2>
+        <p class="text-[16px] text-[#3D5068] leading-relaxed mb-6">
+          Das hängt von Ihrem Objekt ab – eine pauschale Zahl wäre unseriös. Fünf Dinge bestimmen den Preis:
+        </p>
+
+        <ol class="flex flex-col gap-3 list-none p-0 m-0 mb-7">
+          {factors.map((factor, i) => (
+            <li class="flex items-start gap-3.5 bg-white rounded-2xl border border-[#DCE5EF] px-5 py-3.5 shadow-[0_4px_14px_rgba(6,43,74,0.04)]">
+              <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-[#EAF1F7] text-[#0B3A64] text-[14px] font-black shrink-0" aria-hidden="true">{i + 1}</span>
+              <div>
+                <p class="text-[15px] font-extrabold text-[#123B66] m-0 leading-snug">{factor.title}</p>
+                <p class="text-[13.5px] text-[#3D5068] m-0 mt-0.5 leading-snug">{factor.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <div class="flex items-start gap-3.5 rounded-2xl bg-[#EAF6E4] border border-[#63c62f]/35 px-5 py-4 mb-6">
+          <svg class="w-6 h-6 text-[#25b94b] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M9 13h6M9 17h6" />
+          </svg>
+          <p class="text-[14.5px] text-[#123B66] leading-relaxed m-0">
+            <strong class="font-extrabold">Sie erhalten vor der Beauftragung ein nachvollziehbares Angebot</strong> – mit klaren Positionen statt unübersichtlicher Pauschalen. Erst wenn Sie zustimmen, wird ein Termin vereinbart.
+          </p>
+        </div>
+
+        <p class="text-[14.5px] text-[#3D5068] m-0">
+          Lieber persönlich klären? <a href="tel:+493092105026" class="font-extrabold text-[#123B66] hover:text-[#25b94b] no-underline">030 9210 5026</a> <span class="text-[#8AA0B8]">(Mo–Fr 8.00–18.30 Uhr)</span>
+        </p>
+      </div>
+
+      {/* Rechte Spalte: Anfrage-Formular */}
+      <div class="bg-white rounded-[22px] border border-[#DCE5EF] shadow-[0_16px_44px_rgba(6,43,74,0.10)] p-6 sm:p-8 lg:p-9 lg:sticky lg:top-24">
+        <h3 class="font-heading text-[21px] sm:text-[24px] font-extrabold text-[#062B4A] leading-tight mb-1.5 mt-0">Kostenlose Anfrage für Ihr Objekt</h3>
+        <p class="text-[14.5px] text-[#3D5068] mb-6 leading-relaxed">
+          Grobe Angaben reichen völlig aus – wir melden uns persönlich mit einer Einschätzung.
+        </p>
+        <InquiryForm prefix="preise" />
+      </div>
+
+    </div>
+  </Container>
+</section>

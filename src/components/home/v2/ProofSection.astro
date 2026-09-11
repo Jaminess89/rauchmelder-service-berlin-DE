@@ -1,0 +1,217 @@
+---
+import Container from '@/components/Container.astro';
+
+const features = [
+  { title: 'Eindeutig zugeordnet', text: 'Objekt, Wohnung und Raum je Rauchmelder – Sie sehen sofort, wo jedes Gerät hängt.' },
+  { title: 'Ergebnis je Gerät', text: 'Prüfdatum, Zustand und Funktionstest für jeden Melder einzeln festgehalten.' },
+  { title: 'Mängel mit Maßnahme', text: 'Festgestellte Probleme werden mit einer klaren Empfehlung dokumentiert.' },
+  { title: 'Nächster Termin im Blick', text: 'Ein Hinweis zur nächsten fälligen Prüfung gehört bei uns zum Protokoll dazu.' },
+];
+
+const protocolRows = [
+  { room: 'Schlafzimmer', device: 'RWM-01 · Bj. 2023', status: 'In Ordnung', tone: 'green' },
+  { room: 'Kinderzimmer', device: 'RWM-02 · Bj. 2023', status: 'In Ordnung', tone: 'green' },
+  { room: 'Flur', device: 'RWM-03 · Bj. 2019', status: 'Batterie schwach', tone: 'amber' },
+];
+---
+
+<section id="nachweis" class="relative pt-14 pb-24 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32 overflow-hidden scroll-mt-24" style="background: linear-gradient(160deg, #041D35 0%, #062B4A 55%, #0B3A64 100%);" aria-labelledby="proof-heading">
+  <Container class="relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+      {/* Copy */}
+      <div>
+        <p class="inline-flex items-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#8FD97A] mb-3">
+          <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+          Digitale Dokumentation
+        </p>
+        <h2 id="proof-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-white leading-[1.15] mb-4">
+          Jeden Rauchmelder nachvollziehbar dokumentiert
+        </h2>
+        <p class="text-[16px] sm:text-[17px] text-[#B9CBDE] leading-relaxed mb-7">
+          Nach Installation oder Prüfung erhalten Sie eine übersichtliche Dokumentation zu Geräten, Zustand, festgestellten Mängeln und durchgeführten Maßnahmen – statt Handschriften auf Zetteln.
+        </p>
+
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none p-0 m-0 mb-8">
+          {features.map((feature) => (
+            <li class="rounded-2xl bg-white/[0.06] border border-white/10 p-4">
+              <p class="flex items-center gap-2 text-[14.5px] font-extrabold text-white m-0 mb-1">
+                <svg class="w-[18px] h-[18px] text-[#63c62f] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+                {feature.title}
+              </p>
+              <p class="text-[13px] text-[#B9CBDE] leading-relaxed m-0">{feature.text}</p>
+            </li>
+          ))}
+        </ul>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <button
+            type="button"
+            id="open-protocol-modal"
+            class="inline-flex items-center gap-2.5 bg-[#25b94b] hover:bg-[#1fa343] text-white text-[15.5px] font-extrabold px-6 py-3.5 rounded-xl transition-all shadow-[0_10px_24px_rgba(37,185,75,0.35)] hover:-translate-y-px cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            aria-haspopup="dialog"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M9 13h6M9 17h4" /></svg>
+            Musterprotokoll ansehen
+          </button>
+          <p class="text-[13.5px] text-[#8FA6BF] m-0">Fragen zur Dokumentation? <a href="tel:+493092105026" class="text-white font-bold hover:text-[#8FD97A] no-underline">030 9210 5026</a></p>
+        </div>
+      </div>
+      {/* Protokoll-Mockup */}
+      <div class="relative">
+        <div class="bg-white rounded-[22px] shadow-[0_28px_70px_rgba(2,16,32,0.45)] overflow-hidden">
+          <div class="flex items-center justify-between gap-3 px-5 sm:px-6 py-4 border-b border-[#EEF3F8]">
+            <div class="flex items-center gap-3">
+              <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#062B4A] shrink-0" aria-hidden="true">
+                <svg class="w-5 h-5 text-[#8FD97A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z" /><path d="m9 11.5 2.2 2.2L15.5 9.4" /></svg>
+              </span>
+              <div>
+                <p class="text-[15px] font-extrabold text-[#062B4A] m-0 leading-tight">Prüfprotokoll Rauchwarnmelder</p>
+                <p class="text-[12px] text-[#8AA0B8] m-0">Musterhaus 17 · Wohnung 12 · Berlin-Neukölln</p>
+              </div>
+            </div>
+            <span class="hidden sm:inline-flex items-center gap-1.5 text-[11.5px] font-extrabold text-[#237010] bg-[#EAF6E4] border border-[#63c62f]/40 rounded-full px-3 py-1.5 shrink-0 mr-24">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+              12.03.2026
+            </span>
+          </div>
+
+          <ul class="flex flex-col list-none p-0 m-0 px-5 sm:px-6 py-2">
+            {protocolRows.map((row) => (
+              <li class="flex items-center justify-between gap-3 py-3.5 border-b border-[#EEF3F8] last:border-b-0">
+                <div class="min-w-0">
+                  <p class="text-[14px] font-extrabold text-[#123B66] m-0 truncate">{row.room}</p>
+                  <p class="text-[12px] text-[#8AA0B8] m-0">{row.device}</p>
+                </div>
+                <span class={`inline-flex items-center gap-1.5 text-[12px] font-extrabold px-2.5 py-1 rounded-full shrink-0 ${row.tone === 'green' ? 'bg-[#EAF6E4] text-[#237010]' : 'bg-[#FDF6E5] text-[#8a6410]'}`}>
+                  <span class={`w-1.5 h-1.5 rounded-full ${row.tone === 'green' ? 'bg-[#25b94b]' : 'bg-[#e7b93c]'}`} aria-hidden="true"></span>
+                  {row.status}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex items-center justify-between gap-3 px-5 sm:px-6 py-4 bg-[#F4F8FB]">
+            <p class="text-[12.5px] font-bold text-[#3D5068] m-0">Maßnahme: RWM-03 Austausch empfohlen</p>
+            <p class="text-[12.5px] font-extrabold text-[#0B3A64] m-0 shrink-0">Nächste Prüfung: 03/2027</p>
+          </div>
+        </div>
+
+        <div class="absolute -top-5 -right-3 sm:-right-5 bg-white rounded-2xl shadow-[0_14px_36px_rgba(2,16,32,0.35)] px-4 py-3 border border-[#DCE5EF]">
+          <p class="text-[12px] font-bold text-[#8AA0B8] m-0">Geprüfte Geräte</p>
+          <p class="text-[20px] font-black text-[#062B4A] m-0 leading-tight">3 <span class="text-[13px] font-bold text-[#8a6410]">· 1 Hinweis</span></p>
+        </div>
+
+        {/* Echtes Einsatzfoto: Übergabe vor Ort */}
+        <figure class="flex items-center gap-4 mt-7 m-0">
+          <div class="rounded-2xl overflow-hidden border-4 border-white shadow-[0_16px_40px_rgba(2,16,32,0.4)] rotate-[-2.5deg] w-[132px] sm:w-[150px] shrink-0">
+            <picture>
+              <source type="image/avif" srcset="/images/rauchmelder-pruefprotokoll-berlin-320.avif 320w, /images/rauchmelder-pruefprotokoll-berlin-480.avif 480w" sizes="150px" />
+              <img
+                src="/images/rauchmelder-pruefprotokoll-berlin-480.webp"
+                srcset="/images/rauchmelder-pruefprotokoll-berlin-320.webp 320w, /images/rauchmelder-pruefprotokoll-berlin-480.webp 480w"
+                sizes="150px"
+                width="640"
+                height="457"
+                alt="MESSKLAR-Mitarbeiter übergibt das Prüfprotokoll an eine Bewohnerin"
+                class="w-full h-auto"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+          <figcaption class="text-[13px] font-bold text-[#B9CBDE] leading-snug max-w-[220px]">
+            So sieht das in der Praxis aus: Übergabe und kurze Einordnung der Ergebnisse direkt vor Ort.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </Container>
+</section>
+
+{/* Modal: Musterprotokoll */}
+<div id="protocol-modal" class="hidden fixed inset-0 z-[90] items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="protocol-modal-title">
+  <div id="protocol-modal-backdrop" class="absolute inset-0 bg-[#041D35]/80 backdrop-blur-sm"></div>
+  <div class="relative w-full max-w-2xl max-h-[88vh] overflow-y-auto bg-white rounded-[22px] shadow-[0_32px_80px_rgba(2,16,32,0.5)]">
+    <div class="sticky top-0 flex items-center justify-between gap-3 bg-white border-b border-[#EEF3F8] px-5 sm:px-7 py-4 rounded-t-[22px]">
+      <p id="protocol-modal-title" class="text-[17px] font-extrabold text-[#062B4A] m-0">Musterprotokoll Rauchwarnmelder</p>
+      <button type="button" id="close-protocol-modal" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#F4F8FB] hover:bg-[#E9F1F7] text-[#123B66] transition-colors cursor-pointer" aria-label="Musterprotokoll schließen">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+      </button>
+    </div>
+
+    <div class="px-5 sm:px-7 py-5">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+        <div class="rounded-xl bg-[#F4F8FB] p-3"><p class="text-[11px] font-bold text-[#8AA0B8] m-0">Objekt</p><p class="text-[13px] font-extrabold text-[#123B66] m-0">Musterhaus 17</p></div>
+        <div class="rounded-xl bg-[#F4F8FB] p-3"><p class="text-[11px] font-bold text-[#8AA0B8] m-0">Wohnung</p><p class="text-[13px] font-extrabold text-[#123B66] m-0">WE 12 · 3. OG</p></div>
+        <div class="rounded-xl bg-[#F4F8FB] p-3"><p class="text-[11px] font-bold text-[#8AA0B8] m-0">Prüfdatum</p><p class="text-[13px] font-extrabold text-[#123B66] m-0">12.03.2026</p></div>
+        <div class="rounded-xl bg-[#F4F8FB] p-3"><p class="text-[11px] font-bold text-[#8AA0B8] m-0">Nächster Termin</p><p class="text-[13px] font-extrabold text-[#123B66] m-0">03/2027</p></div>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl border border-[#DCE5EF]">
+        <table class="w-full text-left text-[13px]">
+          <thead>
+            <tr class="bg-[#062B4A] text-white">
+              <th class="px-3.5 py-2.5 font-bold">Raum / Gerät</th>
+              <th class="px-3.5 py-2.5 font-bold">Status</th>
+              <th class="px-3.5 py-2.5 font-bold">Feststellung / Maßnahme</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#EEF3F8]">
+            <tr>
+              <td class="px-3.5 py-3"><span class="font-bold text-[#123B66]">Schlafzimmer</span><br /><span class="text-[#8AA0B8] text-[12px]">RWM-01 · Bj. 2023 · Deckenmitte</span></td>
+              <td class="px-3.5 py-3"><span class="inline-flex items-center gap-1.5 text-[#237010] font-bold"><span class="w-1.5 h-1.5 rounded-full bg-[#25b94b]"></span>In Ordnung</span></td>
+              <td class="px-3.5 py-3 text-[#3D5068]">Keine Maßnahme erforderlich</td>
+            </tr>
+            <tr>
+              <td class="px-3.5 py-3"><span class="font-bold text-[#123B66]">Kinderzimmer</span><br /><span class="text-[#8AA0B8] text-[12px]">RWM-02 · Bj. 2023 · Deckenmitte</span></td>
+              <td class="px-3.5 py-3"><span class="inline-flex items-center gap-1.5 text-[#237010] font-bold"><span class="w-1.5 h-1.5 rounded-full bg-[#25b94b]"></span>In Ordnung</span></td>
+              <td class="px-3.5 py-3 text-[#3D5068]">Keine Maßnahme erforderlich</td>
+            </tr>
+            <tr class="bg-[#FDF6E5]/60">
+              <td class="px-3.5 py-3"><span class="font-bold text-[#123B66]">Flur</span><br /><span class="text-[#8AA0B8] text-[12px]">RWM-03 · Bj. 2019 · Flurmitte</span></td>
+              <td class="px-3.5 py-3"><span class="inline-flex items-center gap-1.5 text-[#8a6410] font-bold"><span class="w-1.5 h-1.5 rounded-full bg-[#e7b93c]"></span>Batterie schwach</span></td>
+              <td class="px-3.5 py-3 text-[#3D5068]">Austausch des Geräts empfohlen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-[12px] text-[#8AA0B8] leading-relaxed mt-4 mb-0">Beispielhafte Darstellung eines MESSKLAR-Prüfprotokolls. Ihr tatsächliches Protokoll enthält alle Geräte Ihres Objekts mit den jeweils festgestellten Ergebnissen.</p>
+    </div>
+
+    <div class="px-5 sm:px-7 pb-6">
+      <button type="button" id="close-protocol-modal-bottom" class="w-full inline-flex items-center justify-center gap-2 bg-[#062B4A] hover:bg-[#0B3A64] text-white text-[14.5px] font-bold px-5 py-3 rounded-xl transition-colors cursor-pointer">Schließen</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const modal = document.getElementById('protocol-modal');
+    const openBtn = document.getElementById('open-protocol-modal');
+    const backdrop = document.getElementById('protocol-modal-backdrop');
+    const closeBtns = [document.getElementById('close-protocol-modal'), document.getElementById('close-protocol-modal-bottom')];
+    if (!modal || !openBtn) return;
+
+    const open = () => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('close-protocol-modal')?.focus();
+    };
+    const close = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+      openBtn.focus();
+    };
+
+    openBtn.addEventListener('click', open);
+    backdrop?.addEventListener('click', close);
+    closeBtns.forEach((btn) => btn?.addEventListener('click', close));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+    });
+  })();
+</script>

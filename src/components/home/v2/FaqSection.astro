@@ -1,0 +1,81 @@
+---
+import Container from '@/components/Container.astro';
+
+const faqs = [
+  { q: 'Kann ich Rauchmelder in Berlin professionell installieren lassen?', a: 'Ja. Wir übernehmen Planung, Geräteauswahl und fachgerechte Montage – von der einzelnen Mietwohnung bis zum Mehrfamilienhaus. Jede Installation wird anschließend dokumentiert.' },
+  { q: 'Was kostet eine Rauchmelder-Installation in Berlin?', a: 'Das hängt von der Anzahl der Melder und Wohnungen sowie vom Montageaufwand ab. Beschreiben Sie uns kurz Ihr Objekt – Sie erhalten vor der Beauftragung ein nachvollziehbares Angebot.' },
+  { q: 'Wie läuft eine Rauchmelder-Wartung ab?', a: 'Wir prüfen Position, Zustand, Funktion und Alter jedes Geräts, testen die Alarmfunktion und halten alle Ergebnisse in Ihrer Dokumentation fest. Anschließend sagen wir Ihnen, was zu tun ist – und was nicht.' },
+  { q: 'Prüfen Sie auch vorhandene Rauchmelder?', a: 'Ja, ausdrücklich. Wir beurteilen Zustand, Position, Alter und Funktion Ihrer Bestandsgeräte – und tauschen nur aus, was wirklich nötig ist.' },
+  { q: 'Welche Punkte werden bei einer Rauchmelder-Kontrolle geprüft?', a: 'Vier Dinge: ob alle erforderlichen Räume ausgestattet sind, ob jeder Melder sinnvoll positioniert ist, ob er zuverlässig funktioniert und ob Alter und Austauschzeitpunkt noch passen.' },
+  { q: 'Wer muss Rauchmelder in Berlin installieren?', a: 'Die Ausstattung der Wohnung liegt grundsätzlich in der Verantwortung der Eigentümerinnen und Eigentümer. Wer vermietet, sollte diese Pflicht also nicht den Mietern überlassen.' },
+  { q: 'In welchen Räumen sind Rauchmelder in Berlin Pflicht?', a: 'Nach § 48 BauO Bln in Schlafräumen und Kinderzimmern sowie in Fluren, die als Rettungswege dienen. In Wohnräumen sind Melder zusätzlich sinnvoll, in Küchen prüfen wir die passende Lösung.' },
+  { q: 'Wie oft sollten Rauchmelder geprüft werden?', a: 'Das richtet sich nach Gerät, Herstellerangaben und Wartungskonzept – viele Konzepte sehen eine regelmäßige Prüfung vor. Wir sagen Ihnen, was für Ihre Geräte gilt, und erinnern an den nächsten Termin.' },
+  { q: 'Wann sollten Rauchmelder ausgetauscht werden?', a: 'Spätestens am Ende der vom Hersteller angegebenen Lebensdauer – bei vielen Geräten nach etwa zehn Jahren – sowie bei Defekten, Verschmutzung oder Beschädigung.' },
+  { q: 'Kann MESSKLAR Termine direkt mit Mietern koordinieren?', a: 'Ja, auf Wunsch. Wir stimmen Besuchstermine mit Ihren Bewohnern ab, halten offene Wohnungen nach und melden Ihnen den aktuellen Status je Einheit zurück.' },
+  { q: 'Bekomme ich nach der Prüfung eine Dokumentation?', a: 'Ja. Sie erhalten ein digitales Protokoll mit allen Geräten, Prüfergebnissen, festgestellten Mängeln, durchgeführten Maßnahmen und dem Hinweis zum nächsten fälligen Termin.' },
+  { q: 'Welche Rauchmelder werden eingebaut?', a: 'Geräte nach DIN EN 14604, in der Regel mit 10-Jahres-Batterie – auf Wunsch mit Q-Label oder als ferninspizierbare Variante. Die konkrete Auswahl treffen wir passend zu Ihrem Objekt.' },
+  { q: 'Arbeiten Sie in allen Berliner Bezirken?', a: 'Ja, wir sind in allen zwölf Berliner Bezirken im Einsatz – und nach Absprache auch im Berliner Umland in Brandenburg.' },
+  { q: 'Betreuen Sie auch Mehrfamilienhäuser?', a: 'Ja, vom kleinen Wohnungspaket bis zur großen Wohnanlage: mit Terminplanung, optionaler Bewohnerkoordination und einer Dokumentation, die jedem Gerät seine Wohnung zuordnet.' },
+  { q: 'Können bereits vorhandene Geräte weiterverwendet werden?', a: 'Wenn sie fachlich in Ordnung, sinnvoll positioniert und nicht zu alt sind: ja. Wir prüfen jedes Gerät einzeln, statt pauschal alles zu erneuern.' },
+];
+---
+
+<section id="faq" class="py-14 md:py-20 lg:py-24 bg-white scroll-mt-24" aria-labelledby="faq-heading">
+  <Container>
+    <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+      <p class="inline-flex items-center justify-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+        Häufige Fragen
+        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+      </p>
+      <h2 id="faq-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
+        Das fragen uns Vermieter und Eigentümer
+      </h2>
+      <p class="text-[16px] text-[#3D5068] leading-relaxed m-0">
+        Kurz und konkret beantwortet. Ihre Frage ist nicht dabei? Rufen Sie uns an: <a href="tel:+493092105026" class="font-bold text-[#123B66] hover:text-[#25b94b]">030 9210 5026</a>
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl mx-auto">
+      {faqs.map((f, i) => (
+        <div class="faq-v2-item self-start rounded-2xl border border-[#DCE5EF] bg-white shadow-[0_4px_16px_rgba(6,43,74,0.04)] overflow-hidden transition-colors hover:border-[#63c62f]/40">
+          <h3 class="m-0">
+            <button
+              type="button"
+              class="faq-v2-trigger w-full flex items-center justify-between gap-4 px-5 py-4 text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#062B4A]"
+              aria-expanded="false"
+              aria-controls={`faq-v2-panel-${i}`}
+              id={`faq-v2-trigger-${i}`}
+            >
+              <span class="text-[15px] font-extrabold text-[#123B66] leading-snug">{f.q}</span>
+              <span class="faq-v2-icon flex items-center justify-center w-8 h-8 rounded-full bg-[#EAF6E4] shrink-0 transition-transform duration-300" aria-hidden="true">
+                <svg class="w-4 h-4 text-[#25b94b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14" /></svg>
+              </span>
+            </button>
+          </h3>
+          <div id={`faq-v2-panel-${i}`} role="region" aria-labelledby={`faq-v2-trigger-${i}`} class="faq-v2-panel grid transition-[grid-template-rows] duration-300 ease-out [grid-template-rows:0fr]">
+            <div class="overflow-hidden">
+              <p class="px-5 pb-5 text-[14.5px] text-[#3D5068] leading-relaxed m-0">{f.a}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>
+
+<script is:inline>
+  document.querySelectorAll('.faq-v2-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.faq-v2-item');
+      const panel = item?.querySelector('.faq-v2-panel');
+      const icon = item?.querySelector('.faq-v2-icon');
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      if (panel) panel.style.gridTemplateRows = isOpen ? '0fr' : '1fr';
+      if (icon) icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(45deg)';
+    });
+  });
+</script>
+  </Container>
+</section>

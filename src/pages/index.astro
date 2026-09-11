@@ -1,331 +1,66 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import Hero from '@/components/home/Hero.astro';
-import TrustBanner from '@/components/home/TrustBanner.astro';
-import SmokeAlarmServices from '@/components/home/SmokeAlarmServices.astro';
-import SplitHero from '@/components/home/SplitHero.astro';
-import FineWarning from '@/components/home/FineWarning.astro';
-import LegalConsequences from '@/components/home/LegalConsequences.astro';
-import DigitalProof from '@/components/home/DigitalProof.astro';
-import TransparentPricing from '@/components/home/TransparentPricing.astro';
-import HouseSafetyLevels from '@/components/home/HouseSafetyLevels.astro';
-import SmokeAlarmChecklist from '@/components/home/SmokeAlarmChecklist.astro';
-import LandlordCosts from '@/components/home/LandlordCosts.astro';
-import StepProcess from '@/components/home/StepProcess.astro';
-import TransitionCTA from '@/components/home/TransitionCTA.astro';
-import PropertyManagerBenefits from '@/components/home/PropertyManagerBenefits.astro';
-import ResidentCoordination from '@/components/home/ResidentCoordination.astro';
-import SmokeDetectorQuality from '@/components/home/SmokeDetectorQuality.astro';
-import FAQSection from '@/components/home/FAQSection.astro';
-import ObjectInquiryForm from '@/components/home/ObjectInquiryForm.astro';
-import ServiceArea from '@/components/home/ServiceArea.astro';
+import HeroSection from '@/components/home/v2/HeroSection.astro';
+import TrustStrip from '@/components/home/v2/TrustStrip.astro';
+import ServicesSection from '@/components/home/v2/ServicesSection.astro';
+import PricingContact from '@/components/home/v2/PricingContact.astro';
+import CheckSection from '@/components/home/v2/CheckSection.astro';
+import LandlordSection from '@/components/home/v2/LandlordSection.astro';
+import ProofSection from '@/components/home/v2/ProofSection.astro';
+import DutySection from '@/components/home/v2/DutySection.astro';
+import ProcessSection from '@/components/home/v2/ProcessSection.astro';
+import AboutSection from '@/components/home/v2/AboutSection.astro';
+import DevicesSection from '@/components/home/v2/DevicesSection.astro';
+import BerlinSection from '@/components/home/v2/BerlinSection.astro';
+import CostsSection from '@/components/home/v2/CostsSection.astro';
+import FaqSection from '@/components/home/v2/FaqSection.astro';
+import FinalCta from '@/components/home/v2/FinalCta.astro';
 import { SITE } from '@/config/site';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": SITE.name,
-  "description": SITE.description,
+  "name": "MESSKLAR Rauchmelderservice",
+  "description": "Rauchmelder in Berlin installieren, warten oder prüfen lassen – für Vermieter, Eigentümer und Hausverwaltungen, inklusive digitaler Dokumentation.",
   "url": SITE.url,
   "telephone": "+493092105026",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Musterstraße 1",
-    "addressLocality": "Berlin",
-    "postalCode": "10115",
-    "addressCountry": "DE"
-  },
-  "openingHours": "Mo-Su 00:00-24:00"
+  "areaServed": [
+    "Berlin",
+    "Berlin-Mitte",
+    "Friedrichshain-Kreuzberg",
+    "Pankow",
+    "Charlottenburg-Wilmersdorf",
+    "Spandau",
+    "Steglitz-Zehlendorf",
+    "Tempelhof-Schöneberg",
+    "Neukölln",
+    "Treptow-Köpenick",
+    "Marzahn-Hellersdorf",
+    "Lichtenberg",
+    "Reinickendorf"
+  ],
+  "openingHours": "Mo-Fr 08:00-18:30"
 };
 ---
 
-<BaseLayout 
-  title={SITE.title}
-  description={SITE.description}
+<BaseLayout
+  title="Rauchmelderservice Berlin – Installation & Wartung | Messklar"
+  description="Rauchmelder in Berlin installieren, warten oder prüfen lassen. Für Vermieter, Eigentümer & Hausverwaltungen – inklusive digitaler Dokumentation. Jetzt unverbindlich anfragen."
   jsonLd={jsonLd}
 >
-  <Hero />
-  <TrustBanner />
-  <section class="py-10 md:py-16 bg-[#3F789E] md:pb-[5px] md:pt-[45px]" data-ps="src/pages/index.astro:fur-wen">
-    <div class="max-w-[1200px] mx-auto px-4" data-ps="src/pages/index.astro:2b7xns">
-      <h2 class="text-white text-center text-3xl md:text-[40px] font-bold mb-3 md:mb-4 tracking-tight" data-ps="src/pages/index.astro:fw-h2">Wem wir helfen:</h2>
-      <div class="w-[60px] h-[3px] bg-[#8CC63F] mx-auto mb-6 md:mb-12" data-ps="src/pages/index.astro:fw-line"></div>
-      
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 lg:gap-5" data-ps="src/pages/index.astro:fw-grid">
-        <!-- Item 1 -->
-        <div class="bg-white rounded-[16px] md:rounded-[20px] shadow-lg p-3 md:p-4 lg:p-5 flex flex-col items-center justify-center aspect-[1/1.1] md:aspect-[4/5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full" data-ps="src/pages/index.astro:fw-item1">
-          <svg class="h-[50%] md:h-[45%] w-auto object-contain mb-3 md:mb-5" viewBox="0 0 224 214" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vermieter" data-ps="src/pages/index.astro:fw-icon1">
-            <path fill="none" stroke="#1f4f92" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M135 66.3 V56 Q135 53 138 53 H151 Q154 53 154 56 V83.1" />
-            <path fill="none" stroke="#1f4f92" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M47 99 V179 Q47 183 51 183 H155 Q159 183 159 179 V99" />
-            <path fill="none" stroke="#5aa63a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M88 183 V131 Q88 127 92 127 H119 Q123 127 123 131 V183" />
-            <circle fill="#5aa63a" cx="98" cy="156" r="3.5" />
-            <path fill="none" stroke="#1f4f92" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M47 179 Q47 183 51 183 H155 Q159 183 159 179" />
-            <path fill="none" stroke="#1f4f92" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M33 104 L103 40 L175 104" />
-          </svg>
-          <span class="text-[#133A6B] font-extrabold text-[12px] min-[380px]:text-[14px] sm:text-[15px] md:text-[12px] lg:text-[14px] xl:text-[16px] leading-tight text-center break-words w-full px-1" style="hyphens: auto;" data-ps="src/pages/index.astro:fw-text1">Vermietern</span>
-        </div>
-        
-        <!-- Item 2 -->
-        <div class="bg-white rounded-[16px] md:rounded-[20px] shadow-lg p-3 md:p-4 lg:p-5 flex flex-col items-center justify-center aspect-[1/1.1] md:aspect-[4/5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full" data-ps="src/pages/index.astro:fw-item2">
-          <svg
-            class="h-[50%] md:h-[45%] w-auto object-contain mb-3 md:mb-5"
-            viewBox="0 0 264 232"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Haus mit Schlüssel"
-            shape-rendering="geometricPrecision"
-            data-ps="src/pages/index.astro:fw-icon2"
-          >
-            <path
-              fill="#1f4f92"
-              stroke="#1f4f92"
-              stroke-width="2"
-              stroke-linejoin="round"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M 70 107 L 70 108 L 69 109 L 69 182 L 70 183 L 70 184 L 73 186 L 128 186 L 130 184 L 128 181 L 112 181 L 111 180 L 111 135 L 112 134 L 136 134 L 137 135 L 137 165 L 139 167 L 140 167 L 142 165 L 142 132 L 140 130 L 108 130 L 106 132 L 106 180 L 105 181 L 75 181 L 74 180 L 74 108 L 73 107 Z M 181 99 L 178 96 L 178 95 L 177 94 L 176 94 L 156 74 L 155 74 L 132 51 L 131 51 L 130 50 L 130 49 L 129 49 L 125 45 L 123 45 L 120 48 L 119 48 L 118 49 L 118 50 L 117 51 L 116 51 L 82 85 L 81 85 L 56 110 L 56 112 L 57 113 L 60 113 L 74 99 L 75 99 L 75 98 L 76 97 L 77 97 L 115 59 L 116 59 L 116 58 L 118 56 L 119 56 L 124 51 L 125 51 L 147 73 L 148 73 L 174 99 L 173 100 L 173 103 L 176 106 L 179 105 L 179 104 L 181 101 Z"
-            />
-            <path
-              fill="#5aa63a"
-              stroke="#5aa63a"
-              stroke-width="2"
-              stroke-linejoin="round"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M 185 127 L 184 128 L 183 128 L 180 131 L 180 135 L 182 138 L 183 138 L 184 139 L 188 139 L 192 135 L 192 132 L 191 131 L 191 130 L 189 128 L 188 128 L 187 127 Z M 184 132 L 185 131 L 186 131 L 188 133 L 188 134 L 187 135 L 185 135 L 184 134 Z M 200 119 L 199 119 L 197 117 L 196 117 L 191 114 L 188 114 L 187 113 L 181 113 L 180 114 L 178 114 L 177 115 L 175 115 L 174 116 L 173 116 L 172 117 L 169 118 L 165 122 L 165 123 L 163 125 L 163 126 L 160 131 L 160 144 L 161 145 L 161 147 L 162 148 L 162 150 L 149 163 L 149 164 L 148 165 L 147 165 L 147 166 L 138 175 L 138 176 L 137 177 L 137 189 L 140 192 L 154 192 L 157 189 L 157 183 L 158 182 L 161 182 L 162 181 L 163 181 L 166 178 L 166 172 L 167 171 L 172 171 L 175 168 L 175 162 L 176 161 L 177 161 L 178 162 L 191 162 L 192 161 L 193 161 L 194 160 L 197 159 L 202 154 L 203 154 L 203 153 L 205 151 L 205 150 L 207 147 L 207 145 L 208 144 L 208 132 L 207 131 L 207 129 L 206 128 L 206 127 L 205 126 L 204 123 Z M 195 121 L 201 127 L 201 128 L 203 131 L 203 135 L 204 136 L 204 138 L 203 139 L 203 143 L 202 144 L 202 146 L 200 148 L 200 149 L 194 155 L 193 155 L 190 157 L 187 157 L 186 158 L 181 158 L 180 157 L 177 157 L 176 156 L 174 156 L 170 160 L 170 165 L 169 166 L 166 166 L 165 167 L 164 167 L 162 169 L 162 176 L 161 177 L 156 177 L 154 179 L 154 180 L 152 182 L 152 187 L 151 188 L 143 188 L 142 187 L 142 178 L 145 175 L 145 174 L 149 170 L 150 170 L 150 169 L 163 156 L 163 155 L 164 154 L 165 154 L 167 152 L 167 148 L 166 147 L 166 145 L 165 144 L 165 141 L 164 140 L 164 135 L 165 134 L 165 132 L 166 131 L 166 129 L 167 128 L 167 127 L 168 126 L 169 126 L 169 125 L 171 123 L 172 123 L 177 119 L 181 119 L 182 118 L 187 118 L 188 119 L 191 119 L 192 120 Z"
-            />
-          </svg>
-          <span class="text-[#133A6B] font-extrabold text-[12px] min-[380px]:text-[14px] sm:text-[15px] md:text-[12px] lg:text-[14px] xl:text-[16px] leading-tight text-center break-words w-full px-1" style="hyphens: auto;" data-ps="src/pages/index.astro:fw-text2">Eigentümern</span>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="bg-white rounded-[16px] md:rounded-[20px] shadow-lg p-3 md:p-4 lg:p-5 flex flex-col items-center justify-center aspect-[1/1.1] md:aspect-[4/5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full" data-ps="src/pages/index.astro:fw-item3">
-          <svg
-            class="h-[50%] md:h-[45%] w-auto object-contain mb-3 md:mb-5"
-            viewBox="0 0 508 428"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Gebäude mit Checkliste"
-            shape-rendering="geometricPrecision"
-            data-ps="src/pages/index.astro:fw-icon3"
-          >
-            <!-- Gebäude -->
-            <rect fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x="27" y="26" width="182" height="349" rx="2" ry="2" />
-
-            <!-- Fenster links -->
-            <rect fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x="71" y="70" width="30" height="30" rx="2" ry="2" />
-            <rect fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x="71" y="144" width="30" height="30" rx="2" ry="2" />
-            <rect fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x="71" y="218" width="30" height="30" rx="2" ry="2" />
-
-            <!-- Fenster rechts -->
-            <rect fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x="140" y="70" width="30" height="30" rx="2" ry="2" />
-            <rect fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x="140" y="144" width="30" height="30" rx="2" ry="2" />
-            <rect fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x="140" y="218" width="30" height="30" rx="2" ry="2" />
-
-            <!-- Tür -->
-            <rect fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x="92" y="290" width="46" height="85" rx="2" ry="2" />
-
-            <!-- Klemmbrett Körper -->
-            <rect fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x="257" y="131" width="168" height="244" rx="3" ry="3" />
-
-            <!-- grüner Clip -->
-            <path fill="none" stroke="#5aa63a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" d="M 295 142 V 122 H 318 C 318 108, 330 97, 344 97 C 358 97, 370 108, 370 122 H 388 V 142" />
-
-            <!-- obere blaue Linie -->
-            <line fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x1="301" y1="157" x2="383" y2="157" />
-
-            <!-- Checkmarks -->
-            <path fill="none" stroke="#5aa63a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" d="M 286 204 L 300 220 L 323 193" />
-            <path fill="none" stroke="#5aa63a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" d="M 286 271 L 300 287 L 323 260" />
-            <path fill="none" stroke="#5aa63a" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" d="M 286 338 L 300 354 L 323 327" />
-
-            <!-- Blaue Zeilen -->
-            <line fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x1="345" y1="206" x2="393" y2="206" />
-            <line fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x1="345" y1="273" x2="393" y2="273" />
-            <line fill="none" stroke="#1f4f92" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" x1="345" y1="340" x2="393" y2="340" />
-          </svg>
-          <span class="text-[#133A6B] font-extrabold text-[12px] min-[380px]:text-[14px] sm:text-[15px] md:text-[12px] lg:text-[14px] xl:text-[16px] leading-tight text-center break-words w-full px-1" style="hyphens: auto;" data-ps="src/pages/index.astro:fw-text3">Hausverwaltungen</span>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="bg-white rounded-[16px] md:rounded-[20px] shadow-lg p-3 md:p-4 lg:p-5 flex flex-col items-center justify-center aspect-[1/1.1] md:aspect-[4/5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full" data-ps="src/pages/index.astro:fw-item4">
-          <svg
-            class="h-[50%] md:h-[45%] w-auto object-contain mb-3 md:mb-5"
-            viewBox="0 0 502 488"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Geschäft"
-            shape-rendering="geometricPrecision"
-            data-ps="src/pages/index.astro:fw-icon4"
-          >
-            <!-- Oberes Schild -->
-            <rect fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" x="74" y="59" width="317" height="53" rx="7" />
-            
-            <!-- Gerade obere Markisenkante -->
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M75 112 H390" />
-            
-            <!-- Linke äußere Markisenkante + erster Bogen -->
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M75 112 L45 171 C37 189 43 205 58 216 C76 229 102 220 118 200" />
-            
-            <!-- Zweiter Bogen -->
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M118 200 C128 216 142 223 157 223 C174 223 187 214 195 200" />
-            
-            <!-- Mittlerer Bogen -->
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M195 200 C205 216 219 223 234 223 C250 223 262 214 272 200" />
-            
-            <!-- Vierter Bogen -->
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M272 200 C282 216 296 223 311 223 C327 223 339 214 347 200" />
-            
-            <!-- Fünfter Bogen + rechte äußere Markisenkante -->
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M347 200 C362 220 387 229 405 216 C419 205 427 189 421 171 L390 112" />
-            
-            <!-- Markisen-Trennlinien -->
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M130 113 C128 140 121 176 118 200" />
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M199 113 C199 140 196 176 195 200" />
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M266 113 C267 140 270 176 272 200" />
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M333 113 C335 140 343 176 347 200" />
-            
-            <!-- Ladenkörper -->
-            <path fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M72 222 V412 Q72 421 81 421 H383 Q392 421 392 412 V223" />
-            
-            <!-- Grüne Tür -->
-            <path fill="none" stroke="#66a64a" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" d="M129 415 V286 Q129 279 136 279 H204 Q211 279 211 286 V415" />
-            
-            <!-- Türknauf -->
-            <circle cx="188" cy="353" r="5" fill="#66a64a" />
-            
-            <!-- Fenster -->
-            <rect fill="none" stroke="#244c8e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" x="254" y="279" width="85" height="85" rx="7" />
-          </svg>
-          <span class="text-[#133A6B] font-extrabold text-[12px] min-[380px]:text-[14px] sm:text-[15px] md:text-[12px] lg:text-[14px] xl:text-[16px] leading-tight text-center break-words w-full px-1" style="hyphens: auto;" data-ps="src/pages/index.astro:fw-text4">Gewerbekunden</span>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="col-span-2 md:col-span-1 flex justify-center w-full" data-ps="src/pages/index.astro:2b7xns">
-          <div class="bg-white rounded-[16px] md:rounded-[20px] shadow-lg p-3 md:p-4 lg:p-5 flex flex-col items-center justify-center aspect-[1/1.1] md:aspect-[4/5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-[calc(50%-0.375rem)] md:w-full" data-ps="src/pages/index.astro:fw-item5">
-            <svg
-              class="h-[50%] md:h-[45%] w-auto object-contain mb-3 md:mb-5"
-              viewBox="0 0 320 228"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Wohnungsunternehmen"
-              shape-rendering="geometricPrecision"
-              data-ps="src/pages/index.astro:fw-icon5"
-            >
-              <!-- Seitengebäude -->
-              <path fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M43 215 V82 H115" />
-              <path fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M42 82 H115" />
-
-              <path fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M217 90 H286 V215" />
-              <path fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M217 84 H289 Q291 84 291 86 V88 Q291 90 289 90 H217" />
-
-              <!-- Mittelbau -->
-              <path fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M115 215 V28 H216 V215" />
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="113.5" y="7.5" width="104.5" height="20.5" rx="1.8" />
-
-              <!-- Fenster Mittelbau -->
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="139.5" y="46.5"  width="17" height="16.5" rx="1.4"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="176"   y="46.5"  width="17" height="16.5" rx="1.4"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="139.5" y="78.5"  width="17" height="16.5" rx="1.4"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="176"   y="78.5"  width="17" height="16.5" rx="1.4"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="139.5" y="110.5" width="17" height="16.5" rx="1.4"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="176"   y="110.5" width="17" height="16.5" rx="1.4"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="139.5" y="142.5" width="17" height="16.5" rx="1.4"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="176"   y="142.5" width="17" height="16.5" rx="1.4"/>
-
-              <!-- Fenster links -->
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="59.5" y="99.5" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="86.5" y="99.5" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="59.5" y="131.5" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="86.5" y="131.5" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="59.5" y="163" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="86.5" y="163" width="15" height="15.5" rx="1.2"/>
-
-              <!-- Fenster rechts -->
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="230"   y="101.5" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="256.5" y="101.5" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="230"   y="132.5" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="256.5" y="132.5" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="230"   y="163.5" width="15" height="15.5" rx="1.2"/>
-              <rect fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" x="256.5" y="163.5" width="15" height="15.5" rx="1.2"/>
-
-              <!-- Eingang Mittelbau -->
-              <path fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M141 174.5 H191" />
-              <path fill="none" stroke="#4ca436" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" d="M145 215 V178" />
-              <path fill="none" stroke="#4ca436" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" d="M166 215 V178" />
-              <path fill="none" stroke="#4ca436" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" d="M188 215 V178" />
-
-              <!-- Büsche -->
-              <path fill="none" stroke="#4ca436" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"
-                    d="M61.5 215 V208 C61.5 203.5 65 201 69.5 201 C73 201 75.5 202.5 79.5 202.5 C83 202.5 85.5 201 89.5 201 C95.5 201 99.5 204 99.5 208 V215" />
-
-              <path fill="none" stroke="#4ca436" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"
-                    d="M232.5 215 V208 C232.5 203.5 236 201 240.5 201 C244 201 246.5 202.5 250.5 202.5 C254 202.5 256.5 201 260.5 201 C266.5 201 270 204 270 208 V215" />
-
-              <!-- Linker Baum -->
-              <path fill="none" stroke="#4ca436" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" d="M23 215 V196" />
-              <path fill="none" stroke="#4ca436" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"
-                    d="M23 169 C17.5 169 14 173.5 14 179 C10.5 181.5 8.5 185.5 8.5 190 C8.5 196.5 13.5 201 19.5 201.5 C20.5 203.5 22 204.5 24 204.5 C26 204.5 27.5 203.5 28.5 201.5 C34.5 201 39.5 196.5 39.5 190 C39.5 185.5 37.5 181.5 34 179 C34 173.5 30.5 169 25 169 Z" />
-
-              <!-- Rechter Baum -->
-              <path fill="none" stroke="#4ca436" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" d="M302 215 V193" />
-              <path fill="none" stroke="#4ca436" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"
-                    d="M302 166 C296.5 166 293 170.5 293 176 C289.5 178.5 287.5 182.5 287.5 187 C287.5 193.5 292.5 198 298.5 198.5 C299.5 200.5 301 201.5 303 201.5 C305 201.5 306.5 200.5 307.5 198.5 C313.5 198 318 193.5 318 187 C318 182.5 316 178.5 312.5 176 C312.5 170.5 309 166 303.5 166 C302 166 302 166 302 166 Z" />
-
-              <!-- Bodenlinie -->
-              <path fill="none" stroke="#0c4b93" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M10 217.5 H320" />
-            </svg>
-            <span class="text-[#133A6B] font-extrabold text-[11px] min-[380px]:text-[13px] sm:text-[14px] md:text-[11px] lg:text-[13px] xl:text-[15px] leading-tight text-center break-words w-full px-1" style="hyphens: auto;" data-ps="src/pages/index.astro:fw-text5">Wohnungs&shy;unternehmen</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div id="service" class="bg-[#3F789E] w-full pt-8 pb-3 flex justify-center items-center overflow-hidden md:pb-0 md:pt-[35px] scroll-mt-20 md:scroll-mt-24" data-ps="src/pages/index.astro:2b7xns">
-    <div class="flex items-center gap-3 md:gap-6" data-ps="src/pages/index.astro:v8j2m1">
-      <!-- Green Checkbox Icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 sm:w-12 sm:h-12 md:w-[72px] md:h-[72px] shrink-0" viewBox="0 0 100 100" fill="none" data-ps="src/pages/index.astro:z4x1r5">
-        <defs>
-          <linearGradient id="checkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#97D046" />
-            <stop offset="100%" stop-color="#4B9511" />
-          </linearGradient>
-          <filter id="iconShadow" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
-          </filter>
-        </defs>
-        <rect x="15" y="25" width="55" height="55" rx="6" stroke="url(#checkGrad)" stroke-width="8" fill="none" filter="url(#iconShadow)"/>
-        <path d="M 28 53 L 45 69 L 92 12" stroke="url(#checkGrad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#iconShadow)"/>
-      </svg>
-      
-      <!-- Text -->
-      <h4 class="text-white font-black m-0 tracking-[-0.02em] leading-none text-2xl sm:text-3xl md:text-[40px]" data-ps="src/pages/index.astro:gpk8hd">
-        So helfen wir:
-      </h4>
-    </div>
-  </div>
-  <SmokeAlarmServices />
-  <SplitHero />
-  <FineWarning />
-  <LegalConsequences />
-  <DigitalProof />
-  <TransparentPricing />
-  <HouseSafetyLevels />
-  <SmokeAlarmChecklist />
-  <StepProcess />
-  <LandlordCosts />
-  <TransitionCTA />
-  <div id="leistungen" class="scroll-mt-24" data-ps="src/pages/index.astro:2b7xno">
-    <PropertyManagerBenefits />
-  </div>
-  <ServiceArea />
-  <!-- Einfügepunkt: Neue Normcheck-Sektionen (alles oberhalb bleibt unverändert) -->
-  <ResidentCoordination />
-  <SmokeDetectorQuality />
-  <div id="faq" class="scroll-mt-24" data-ps="src/pages/index.astro:2b7xns">
-    <FAQSection />
-  </div>
-  <ObjectInquiryForm />
+  <HeroSection />
+  <TrustStrip />
+  <ServicesSection />
+  <PricingContact />
+  <CheckSection />
+  <LandlordSection />
+  <ProofSection />
+  <DutySection />
+  <ProcessSection />
+  <AboutSection />
+  <DevicesSection />
+  <BerlinSection />
+  <CostsSection />
+  <FaqSection />
+  <FinalCta />
 </BaseLayout>
-

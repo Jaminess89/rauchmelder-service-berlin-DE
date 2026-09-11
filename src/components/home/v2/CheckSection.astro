@@ -1,0 +1,109 @@
+---
+import Container from '@/components/Container.astro';
+
+const checks = [
+  { num: '01', title: 'Sind alle erforderlichen Räume ausgestattet?', text: 'Wir gleichen die vorhandenen Melder mit dem Grundriss Ihrer Wohnung ab: Schlaf- und Kinderzimmer, Flure als Rettungsweg – und ob die Verteilung zum Objekt passt.' },
+  { num: '02', title: 'Ist jeder Rauchmelder sinnvoll positioniert?', text: 'Ein Melder schützt nur, wenn er richtig sitzt: an der Decke, mit ausreichend Abstand zu Wänden, Lampen und Durchzug – nicht verdeckt von Möbeln oder Vorhängen.' },
+  { num: '03', title: 'Funktioniert der Melder zuverlässig?', text: 'Sichtprüfung von Gehäuse und Raucheintritten, Test der Alarmfunktion, Kontrolle von Verschmutzung und Beschädigungen – bei jedem einzelnen Gerät.' },
+  { num: '04', title: 'Ist der Austauschzeitpunkt noch passend?', text: 'Wir prüfen Herstellungsdatum und Batteriekonzept. Erst wenn ein Melder das Ende seiner Lebensdauer erreicht, empfehlen wir den Austausch – nicht früher.' },
+];
+---
+
+<section id="pruefung" class="py-14 md:py-20 lg:py-24 bg-white scroll-mt-24" aria-labelledby="check-heading">
+  <Container>
+    <div class="max-w-3xl mb-10 md:mb-14">
+      <p class="inline-flex items-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+        Der 4-Punkte-Check
+      </p>
+      <h2 id="check-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
+        Was wir bei einer Rauchmelder-Kontrolle prüfen
+      </h2>
+      <p class="text-[16px] sm:text-[17.5px] text-[#3D5068] leading-relaxed">
+        Ob einzelne Wohnung oder ganzer Bestand: Jede Kontrolle folgt denselben vier Fragen. So entsteht ein belastbares Bild vom Zustand Ihrer Rauchwarnmelder – und Sie wissen genau, was zu tun ist und was nicht.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-8 lg:gap-12 items-center">
+
+      {/* Grundriss-Illustration */}
+      <div class="bg-[#F4F8FB] rounded-[22px] border border-[#DCE5EF] p-5 sm:p-7 shadow-[0_10px_30px_rgba(6,43,74,0.06)]">
+        <svg viewBox="0 0 420 356" class="w-full h-auto" role="img" aria-label="Schematischer Grundriss einer Wohnung mit vier markierten Prüfpunkten der Rauchmelder-Kontrolle">
+          <defs>
+            <g id="det">
+              <circle r="11" fill="#fff" stroke="#0B3A64" stroke-width="2.5" />
+              <circle r="6.5" fill="none" stroke="#0B3A64" stroke-width="1.4" opacity=".55" />
+              <circle r="2.6" fill="#25b94b" />
+            </g>
+            <g id="pin">
+              <circle r="13.5" fill="#0B3A64" stroke="#fff" stroke-width="3" />
+            </g>
+          </defs>
+          <rect x="14" y="14" width="172" height="160" rx="4" fill="#EAF6E4" />
+          <rect x="186" y="14" width="220" height="160" rx="4" fill="#EAF6E4" />
+          <rect x="14" y="174" width="392" height="62" fill="#E9F1F7" />
+          <rect x="14" y="236" width="172" height="106" rx="4" fill="#F4F8FB" />
+          <rect x="186" y="236" width="110" height="106" rx="4" fill="#F4F8FB" />
+          <rect x="296" y="236" width="110" height="106" rx="4" fill="#F4F8FB" />
+          <g stroke="#0B3A64" stroke-width="5" stroke-linecap="round" fill="none">
+            <path d="M12 12 H408 V344 H12 Z" />
+            <path d="M184 12 V122 M184 158 V174" />
+            <path d="M12 174 H120 M156 174 H408" />
+            <path d="M12 236 H408" />
+            <path d="M184 236 V344" />
+            <path d="M294 236 V300 M294 326 V344" />
+          </g>
+          <g stroke="#8AA0B8" stroke-width="1.6" fill="none" stroke-dasharray="3 3">
+            <path d="M120 174 a36 36 0 0 1 36 -36" />
+            <path d="M184 122 a36 36 0 0 1 0 36" />
+            <path d="M294 300 a26 26 0 0 0 0 26" />
+          </g>
+          <g font-size="12.5" font-weight="700" fill="#5A7191" text-anchor="middle">
+            <text x="98" y="162">Schlafzimmer</text>
+            <text x="296" y="162">Wohnzimmer</text>
+            <text x="345" y="210">Flur</text>
+            <text x="98" y="334">Küche</text>
+            <text x="240" y="334">Bad</text>
+            <text x="351" y="334">Abstellr.</text>
+          </g>
+          <use href="#det" x="98" y="60" />
+          <use href="#det" x="296" y="60" />
+          <use href="#det" x="230" y="205" />
+          <use href="#pin" x="60" y="118" /><text x="60" y="123" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">1</text>
+          <use href="#pin" x="262" y="205" /><text x="262" y="210" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">2</text>
+          <use href="#pin" x="330" y="60" /><text x="330" y="65" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">3</text>
+          <use href="#pin" x="98" y="276" /><text x="98" y="281" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">4</text>
+        </svg>
+
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-4 pt-4 border-t border-[#DCE5EF]">
+          <span class="flex items-center gap-2 text-[12.5px] font-bold text-[#3D5068]">
+            <svg class="w-[18px] h-[18px]" viewBox="-11 -11 22 22" aria-hidden="true"><circle r="11" fill="#fff" stroke="#0B3A64" stroke-width="2.5" /><circle r="2.6" fill="#25b94b" /></svg>
+            Rauchwarnmelder
+          </span>
+          <span class="flex items-center gap-2 text-[12.5px] font-bold text-[#3D5068]">
+            <span class="flex items-center justify-center w-[18px] h-[18px] rounded-full bg-[#0B3A64] text-white text-[10px] font-extrabold" aria-hidden="true">1</span>
+            Prüfpunkt
+          </span>
+        </div>
+      </div>
+      {/* Prüfpunkte */}
+      <ol class="flex flex-col gap-4 list-none p-0 m-0">
+        {checks.map((check) => (
+          <li class="relative flex gap-5 rounded-[18px] border border-[#DCE5EF] bg-white p-5 sm:p-6 shadow-[0_6px_20px_rgba(6,43,74,0.05)] hover:shadow-[0_12px_30px_rgba(6,43,74,0.10)] hover:border-[#63c62f]/40 transition-all">
+            <span class="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#062B4A] text-white text-[17px] sm:text-[19px] font-black shrink-0 shadow-[0_6px_16px_rgba(6,43,74,0.25)]" aria-hidden="true">
+              {check.num}
+            </span>
+            <div>
+              <h3 class="text-[17px] sm:text-[19px] font-extrabold text-[#062B4A] leading-snug mt-0 mb-1.5">{check.title}</h3>
+              <p class="text-[14.5px] sm:text-[15px] text-[#3D5068] leading-relaxed m-0">{check.text}</p>
+            </div>
+          </li>
+        ))}
+        <li class="flex items-center gap-3 pl-1 pt-1">
+          <svg class="w-5 h-5 text-[#25b94b] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z" /><path d="m9 11.5 2.2 2.2L15.5 9.4" /></svg>
+          <p class="text-[14px] text-[#3D5068] m-0">Das Ergebnis erhalten Sie anschließend <strong class="font-bold text-[#123B66]">digital dokumentiert</strong> – inklusive aller Feststellungen je Gerät.</p>
+        </li>
+      </ol>
+    </div>
+  </Container>
+</section>

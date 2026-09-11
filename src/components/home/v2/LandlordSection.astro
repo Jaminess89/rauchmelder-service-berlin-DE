@@ -1,0 +1,137 @@
+---
+import Container from '@/components/Container.astro';
+
+const groups = [
+  {
+    title: 'Private Vermieter',
+    text: 'Eine oder mehrere Wohnungen vermietet? Wir halten Ihre Rauchmelder im Blick – Sie müssen an nichts denken.',
+    icon: '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/>',
+  },
+  {
+    title: 'Eigentümer & Mehrfamilienhäuser',
+    text: 'Vom Treppenhaus bis zur letzten Wohnung: strukturierte Begehung mit klarer Ergebnisliste je Einheit.',
+    icon: '<rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h2M8 11h2M8 15h2M14 7h2M14 11h2M14 15h2"/><path d="M10 21v-3h4v3"/>',
+  },
+  {
+    title: 'Hausverwaltungen & Wohnungsunternehmen',
+    text: 'Große Bestände mit vielen Bewohnern: planbare Terminläufe, Statusübersicht und Dokumentation pro Objekt.',
+    icon: '<rect x="3" y="7" width="8" height="14" rx="1.5"/><rect x="13" y="3" width="8" height="18" rx="1.5"/><path d="M6 11h2M6 15h2M16 7h2M16 11h2M16 15h2"/>',
+  },
+];
+
+const steps = [
+  { title: 'Termine abstimmen', text: 'Wir stimmen passende Besuchstermine direkt mit Ihren Mietern ab – freundlich und verbindlich.' },
+  { title: 'Offene Wohnungen nachhalten', text: 'Nicht angetroffene Bewohner geraten nicht in Vergessenheit: Wir halten Absagen und Ausfälle nach.' },
+  { title: 'Status zurückmelden', text: 'Sie erhalten eine klare Übersicht: welche Wohnungen erledigt sind und wo noch etwas offen ist.' },
+  { title: 'Weniger Verwaltungsaufwand', text: 'Keine Telefonlisten, kein Hinterherlaufen – die Koordination läuft bei uns im Hintergrund mit.' },
+];
+
+const rows = [
+  { unit: 'WE 12 · 3. OG links', status: 'Erledigt', tone: 'green' },
+  { unit: 'WE 14 · 3. OG rechts', status: 'Terminiert · 14.03.', tone: 'blue' },
+  { unit: 'WE 21 · 5. OG links', status: 'Erinnerung gesendet', tone: 'amber' },
+  { unit: 'WE 23 · 5. OG rechts', status: 'Folgetermin nötig', tone: 'red' },
+];
+
+const toneClasses: Record<string, string> = {
+  green: 'bg-[#EAF6E4] text-[#237010] border-[#63c62f]/40',
+  blue: 'bg-[#EAF1F7] text-[#0B3A64] border-[#0B3A64]/20',
+  amber: 'bg-[#FDF6E5] text-[#8a6410] border-[#e7c96a]/50',
+  red: 'bg-[#FDF0EF] text-[#a33327] border-[#e5a49e]/50',
+};
+---
+
+<section id="leistungen" class="py-14 md:py-20 lg:py-24 bg-[#F4F8FB] scroll-mt-24" aria-labelledby="landlord-heading">
+  <Container>
+    <div class="max-w-3xl mb-10 md:mb-12">
+      <p class="inline-flex items-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
+        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+        Für Vermieter &amp; Verwalter
+      </p>
+      <h2 id="landlord-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
+        Rauchmelderservice für Vermieter &amp; Hausverwaltungen
+      </h2>
+      <p class="text-[16px] sm:text-[17.5px] text-[#3D5068] leading-relaxed">
+        Wir prüfen nicht nur Rauchmelder – wir nehmen Ihnen den Organisationsaufwand ab, der sonst an Ihnen hängen bleibt.
+      </p>
+    </div>
+
+    {/* Drei Nutzergruppen kompakt */}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-12 md:mb-16">
+      {groups.map((group) => (
+        <article class="flex gap-4 bg-white rounded-[18px] border border-[#DCE5EF] p-5 sm:p-6 shadow-[0_6px_20px_rgba(6,43,74,0.05)]">
+          <span class="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#EAF1F7] shrink-0" aria-hidden="true">
+            <svg class="w-6 h-6 text-[#0B3A64]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={group.icon} />
+          </span>
+          <div>
+            <h3 class="text-[16px] sm:text-[17px] font-extrabold text-[#062B4A] leading-snug mt-0 mb-1.5">{group.title}</h3>
+            <p class="text-[13.5px] sm:text-[14px] text-[#3D5068] leading-relaxed m-0">{group.text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+    {/* Bewohnerkoordination */}
+    <div id="koordination" class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center scroll-mt-28">
+
+      <div>
+        <h3 class="font-heading text-[24px] sm:text-[28px] lg:text-[32px] font-black tracking-tight text-[#062B4A] leading-[1.2] mb-4 mt-0">
+          Wir koordinieren Rauchmelder-Termine auf Wunsch direkt mit Ihren Mietern
+        </h3>
+        <p class="text-[15.5px] sm:text-[16px] text-[#3D5068] leading-relaxed mb-7">
+          Der größte Aufwand bei der Rauchmelder-Wartung ist selten die Technik – es sind die Termine. Genau dort helfen wir: als Ihr Ansprechpartner zwischen Verwaltung und Bewohnern.
+        </p>
+        <ul class="flex flex-col gap-4 list-none p-0 m-0">
+          {steps.map((step, i) => (
+            <li class="flex gap-4">
+              <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-[#062B4A] text-white text-[14px] font-black shrink-0" aria-hidden="true">{i + 1}</span>
+              <div>
+                <p class="text-[15.5px] font-extrabold text-[#123B66] m-0 leading-snug">{step.title}</p>
+                <p class="text-[14px] text-[#3D5068] m-0 mt-1 leading-relaxed">{step.text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Objekt-/Status-Dashboard */}
+      <div class="relative">
+        <div class="bg-white rounded-[22px] border border-[#DCE5EF] shadow-[0_20px_50px_rgba(6,43,74,0.12)] overflow-hidden">
+          <div class="flex items-center justify-between gap-3 bg-[#062B4A] px-5 sm:px-6 py-4">
+            <div class="flex items-center gap-3 min-w-0">
+              <svg class="w-5 h-5 text-[#8FD97A] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3 9.5h18"/></svg>
+              <p class="text-white text-[14px] sm:text-[15px] font-extrabold truncate m-0">Objektübersicht · Musterhaus Berlin-Neukölln</p>
+            </div>
+            <span class="text-[11px] font-bold text-white/60 shrink-0">Beispiel</span>
+          </div>
+          <div class="px-5 sm:px-6 pt-5 pb-2">
+            <div class="flex items-center justify-between text-[12.5px] font-bold text-[#3D5068] mb-2">
+              <span>18 von 24 Wohnungen terminiert</span>
+              <span class="text-[#237010]">75 %</span>
+            </div>
+            <div class="w-full h-2.5 rounded-full bg-[#E9F1F7] overflow-hidden mb-4">
+              <div class="h-full w-3/4 rounded-full bg-gradient-to-r from-[#63c62f] to-[#25b94b]"></div>
+            </div>
+          </div>
+          <ul class="flex flex-col list-none p-0 m-0 px-3 pb-6">
+            {rows.map((row) => (
+              <li class="flex items-center justify-between gap-3 px-3 py-3 border-t border-[#EEF3F8] first:border-t-0">
+                <span class="flex items-center gap-3 min-w-0">
+                  <span class="w-2 h-2 rounded-full bg-[#0B3A64]/25 shrink-0" aria-hidden="true"></span>
+                  <span class="text-[13.5px] sm:text-[14px] font-bold text-[#123B66] truncate">{row.unit}</span>
+                </span>
+                <span class={`text-[11.5px] sm:text-[12px] font-extrabold px-2.5 py-1 rounded-full border shrink-0 ${toneClasses[row.tone]}`}>{row.status}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="absolute -bottom-10 -left-3 sm:-left-5 bg-white rounded-2xl border border-[#DCE5EF] shadow-[0_12px_30px_rgba(6,43,74,0.14)] px-4 py-3 flex items-center gap-3">
+          <span class="flex items-center justify-center w-9 h-9 rounded-xl bg-[#EAF6E4]" aria-hidden="true">
+            <svg class="w-5 h-5 text-[#25b94b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <p class="text-[12.5px] sm:text-[13px] font-bold text-[#123B66] leading-snug m-0">Wir übernehmen die Anrufe –<br />Sie behalten den Überblick.</p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
