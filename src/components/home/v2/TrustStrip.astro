@@ -21,7 +21,7 @@ const items = [
 ];
 ---
 
-<section class="bg-[#062B4A] border-y border-[#0B3A64]" aria-label="Ihre Vorteile auf einen Blick">
+<section class="bg-[#062B4A] border-y border-[#0B3A64]" aria-label="Ihre Vorteile auf einen Blick" data-ps="src/components/home/v2/TrustStrip.astro:fh7r3f">
   <Container>
     <ul class="grid grid-cols-2 lg:grid-cols-4 list-none p-0 m-0">
       {items.map((item, i) => (
@@ -32,12 +32,12 @@ const items = [
           i > 0 ? 'lg:border-r lg:border-white/10 lg:pl-6' : '',
           i === 3 ? 'lg:!border-r-0' : '',
           i % 2 === 1 ? 'max-lg:pl-4' : '',
-        ]}>
-          <span class="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-xl bg-white/[0.07] shrink-0" aria-hidden="true">
+        ]} data-ps={`src/components/home/v2/TrustStrip.astro:wcw0tl-${i}`}>
+          <span class="relative flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-xl bg-white/[0.07] shrink-0" aria-hidden="true" data-ps={`src/components/home/v2/TrustStrip.astro:r0x73s-${i}`}>
             <svg class="w-5 h-5 md:w-[22px] md:h-[22px] text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon} />
-            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#63c62f] border-2 border-[#062B4A]"></span>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#63c62f] border-2 border-[#062B4A]" data-ps={`src/components/home/v2/TrustStrip.astro:r0x73t-${i}`}></span>
           </span>
-          <span class="text-white text-[13px] sm:text-[14px] md:text-[15px] font-bold leading-tight">{item.label}</span>
+          <span class="text-white text-[13px] sm:text-[14px] md:text-[15px] font-bold leading-tight" data-ps={`src/components/home/v2/TrustStrip.astro:r0x73u-${i}`}>{item.label}</span>
         </li>
       ))}
     </ul>

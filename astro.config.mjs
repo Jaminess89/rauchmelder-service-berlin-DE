@@ -84,6 +84,9 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      tsconfigPaths: false,
+    },
     server: {
       watch: {
         // The Cloudflare adapter's dev runtime (workerd/miniflare) writes

@@ -1,72 +1,91 @@
 ---
-import Container from '@/components/Container.astro';
-
-const steps = [
-  {
-    title: 'Anfrage senden',
-    text: 'Beschreiben Sie kurz Ihr Objekt und die gewünschte Leistung – grobe Angaben reichen. Online übers Formular oder direkt am Telefon.',
-    icon: '<path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/>',
-  },
-  {
-    title: 'Termin und Objekt abstimmen',
-    text: 'Wir melden uns persönlich, klären offene Fragen und finden einen verbindlichen Termin – auf Wunsch direkt mit Ihren Mietern koordiniert.',
-    icon: '<rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3 9.5h18"/><path d="m10.5 14.5 1.8 1.8 3.2-3.6"/>',
-  },
-  {
-    title: 'Installation oder Wartung durchführen',
-    text: 'Wir montieren und prüfen sauber und zügig – und sagen Ihnen offen, wenn etwas nicht gemacht werden muss.',
-    icon: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
-  },
-  {
-    title: 'Dokumentation erhalten',
-    text: 'Sie erhalten Ihr digitales Protokoll: alle Geräte, alle Ergebnisse, alle Maßnahmen – inklusive Hinweis zum nächsten Termin.',
-    icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/>',
-  },
-];
 ---
 
-<section id="ablauf" class="py-14 md:py-20 lg:py-24 bg-[#F4F8FB] scroll-mt-24" aria-labelledby="process-heading">
-  <Container>
-    <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-      <p class="inline-flex items-center justify-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
-        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
-        Der Ablauf
-        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
-      </p>
-      <h2 id="process-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
-        Rauchmelder installieren oder prüfen lassen – so einfach geht es
-      </h2>
-      <p class="text-[16px] text-[#3D5068] leading-relaxed m-0">
-        Vier Schritte von der Anfrage bis zum fertigen Protokoll. Sie müssen sich um nichts kümmern – außer uns kurz Ihr Objekt zu beschreiben.
-      </p>
+<section id="ablauf" class="flow" aria-labelledby="process-heading" data-ps="src/components/home/v2/ProcessSection.astro:s63kwg">
+  {/* Hintergrundbild & Farboverlay beibehalten */}
+  <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true" data-ps="src/components/home/v2/ProcessSection.astro:bg-wrap">
+    <img
+      src="https://pagesmith-cdn.com/0c80a694/images/paul-lichtblau-uMId2WIsWyM-unsplash-1024-58005d-1024.webp"
+      srcset="https://pagesmith-cdn.com/0c80a694/images/paul-lichtblau-uMId2WIsWyM-unsplash-1024-58005d-320.webp 320w, https://pagesmith-cdn.com/0c80a694/images/paul-lichtblau-uMId2WIsWyM-unsplash-1024-58005d-640.webp 640w, https://pagesmith-cdn.com/0c80a694/images/paul-lichtblau-uMId2WIsWyM-unsplash-1024-58005d-768.webp 768w, https://pagesmith-cdn.com/0c80a694/images/paul-lichtblau-uMId2WIsWyM-unsplash-1024-58005d-1024.webp 1024w"
+      sizes="100vw"
+      alt=""
+      class="w-full h-full object-cover object-center"
+      loading="lazy" data-ps="src/components/home/v2/ProcessSection.astro:bg-img" />
+  </div>
+  <div class="shade" data-ps="src/components/home/v2/ProcessSection.astro:pdsq17"></div>
+
+  <div class="fi" data-ps="src/components/home/v2/ProcessSection.astro:pdsq16">
+    <div class="ey" data-ps="src/components/home/v2/ProcessSection.astro:pdsq15">DER ABLAUF</div>
+    <h2 id="process-heading" data-ps="src/components/home/v2/ProcessSection.astro:8ddr6f">Rauchmelder installieren oder<br>prüfen lassen: So einfach geht es</h2>
+    <p class="intro" data-ps="src/components/home/v2/ProcessSection.astro:mc7oz6">Vier Schritte von der Anfrage bis zum fertigen Protokoll. Sie müssen sich um nichts<br>kümmern, außer uns kurz Ihr Objekt zu beschreiben.</p>
+
+    <div class="steps" data-ps="src/components/home/v2/ProcessSection.astro:pdsq14">
+      <div class="line" data-ps="src/components/home/v2/ProcessSection.astro:pdsq13"></div>
+
+      <article data-ps="src/components/home/v2/ProcessSection.astro:mxnc4c">
+        <div class="ib" data-ps="src/components/home/v2/ProcessSection.astro:pdsq12"><b>1</b><svg viewBox="0 0 64 64"><path d="M10 30 54 12 38 54 29 36Z"/><path d="m29 36 25-24"/></svg></div>
+        <h3 data-ps="src/components/home/v2/ProcessSection.astro:n1soe3">Anfrage senden</h3>
+        <p data-ps="src/components/home/v2/ProcessSection.astro:mc7oz7">Beschreiben Sie kurz Ihr Objekt und die gewünschte Leistung: Grobe Angaben reichen. Online übers Formular oder direkt am Telefon.</p>
+      </article>
+
+      <article data-ps="src/components/home/v2/ProcessSection.astro:mxnc4d">
+        <div class="ib" data-ps="src/components/home/v2/ProcessSection.astro:pdsq11"><b>2</b><svg viewBox="0 0 64 64"><rect x="12" y="17" width="40" height="35" rx="5"/><path d="M12 27h40M22 11v12M42 11v12m-19 17 6 6 12-14"/></svg></div>
+        <h3 data-ps="src/components/home/v2/ProcessSection.astro:n1soe2">Termin und Objekt<br>abstimmen</h3>
+        <p data-ps="src/components/home/v2/ProcessSection.astro:mc7ozt">Wir melden uns persönlich, klären offene Fragen und finden einen verbindlichen Termin, auf Wunsch direkt mit Ihren Mietern koordiniert.</p>
+      </article>
+
+      <article data-ps="src/components/home/v2/ProcessSection.astro:mxnc4e">
+        <div class="ib" data-ps="src/components/home/v2/ProcessSection.astro:pdsq10"><b>3</b><svg viewBox="0 0 64 64"><path d="M41 10a14 14 0 0 0-12 19L12 46a5 5 0 0 0 7 7l17-17a14 14 0 0 0 18-13l-9 7-8-2-2-8Z"/></svg></div>
+        <h3 data-ps="src/components/home/v2/ProcessSection.astro:n1soe1">Installation oder<br>Wartung durchführen</h3>
+        <p data-ps="src/components/home/v2/ProcessSection.astro:mc7ozu">Wir montieren und prüfen sauber und zügig und sagen Ihnen offen, wenn etwas nicht gemacht werden muss.</p>
+      </article>
+
+      <article data-ps="src/components/home/v2/ProcessSection.astro:1juqdy">
+        <div class="ib" data-ps="src/components/home/v2/ProcessSection.astro:pdsq0z"><b>4</b><svg viewBox="0 0 64 64"><path d="M18 9h22l10 10v36H18Z"/><path d="M40 9v12h10M25 35l5 5 10-12"/></svg></div>
+        <h3 data-ps="src/components/home/v2/ProcessSection.astro:n1soe0">Dokumentation<br>erhalten</h3>
+        <p data-ps="src/components/home/v2/ProcessSection.astro:t2e85d">Sie erhalten Ihr digitales Protokoll: alle Geräte, alle Ergebnisse, alle Maßnahmen, inklusive Hinweis zum nächsten Termin.</p>
+      </article>
     </div>
 
-    {/* Timeline */}
-    <ol class="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 md:gap-8 list-none p-0 m-0">
-      {/* Verbindungslinie (Desktop) */}
-      <div class="hidden xl:block absolute top-[27px] left-[12.5%] right-[12.5%] h-[3px] rounded-full bg-gradient-to-r from-[#63c62f]/60 via-[#DCE5EF] to-[#DCE5EF]" aria-hidden="true"></div>
-      {/* Verbindungslinie (nur Mobile, einspaltig) */}
-      <div class="md:hidden absolute top-2 bottom-2 left-[27px] w-[3px] rounded-full bg-gradient-to-b from-[#63c62f]/60 via-[#DCE5EF] to-[#DCE5EF]" aria-hidden="true"></div>
-
-      {steps.map((step, i) => (
-        <li class="relative flex xl:flex-col gap-5 xl:gap-0 xl:items-center xl:text-center">
-          <span class="relative z-10 flex items-center justify-center w-14 h-14 rounded-2xl bg-[#062B4A] shadow-[0_10px_24px_rgba(6,43,74,0.3)] shrink-0 xl:mb-5" aria-hidden="true">
-            <svg class="w-[26px] h-[26px] text-[#8FD97A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={step.icon} />
-            <span class="absolute -top-2 -right-2 flex items-center justify-center w-6 h-6 rounded-full bg-[#25b94b] text-white text-[12px] font-black border-2 border-[#F4F8FB]">{i + 1}</span>
-          </span>
-          <div class="xl:px-3 pt-1 xl:pt-0">
-            <h3 class="text-[18px] sm:text-[19px] font-extrabold text-[#062B4A] leading-snug mt-0 mb-2">{step.title}</h3>
-            <p class="text-[14px] sm:text-[14.5px] text-[#3D5068] leading-relaxed m-0">{step.text}</p>
-          </div>
-        </li>
-      ))}
-    </ol>
-
-    <div class="text-center mt-12">
-      <a href="#ersteinschaetzung" class="inline-flex items-center gap-2.5 bg-[#25b94b] hover:bg-[#1fa343] text-white text-[16px] font-extrabold px-7 py-[14px] rounded-xl no-underline transition-all shadow-[0_10px_24px_rgba(37,185,75,0.3)] hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#062B4A]">
-        Schritt 1 jetzt starten – Anfrage senden
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
-      </a>
-    </div>
-  </Container>
+    <a class="cta" href="#ersteinschaetzung" data-ps="src/components/home/v2/ProcessSection.astro:su504k">Schritt 1 jetzt starten: Anfrage senden <span data-ps="src/components/home/v2/ProcessSection.astro:iqkqqt">→</span></a>
+  </div>
 </section>
+
+<style>
+.flow,.flow *{box-sizing:border-box}
+.flow{position:relative;overflow:hidden;min-height:850px;padding:64px 30px 60px;font-family:var(--font-sans, Inter, Arial, sans-serif);color:#fff}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,27,51,.9),rgba(11,52,79,.86) 50%,rgba(2,27,51,.91)),rgba(5,35,58,.55);backdrop-filter:blur(1px)}
+.fi{position:relative;z-index:2;max-width:1500px;margin:auto;text-align:center}
+.ey{display:flex;align-items:center;justify-content:center;gap:14px;color:#66d52f;font-size:15px;font-weight:900;letter-spacing:2px}
+.ey:before,.ey:after{content:"";width:38px;height:3px;border-radius:5px;background:#61cf30}
+.flow h2{margin:25px auto 19px;max-width:900px;font-size:clamp(36px,4.2vw,58px);line-height:1.08;letter-spacing:-2px;font-weight:900}
+.intro{margin:0 auto;color:#cad6df;font-size:clamp(17px,1.4vw,21px);line-height:1.55}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-top:72px}
+.line{position:absolute;z-index:0;left:10%;right:10%;top:40px;height:4px;background:linear-gradient(90deg,#55d72f,#59d736 38%,#90a9ba 55%,#748d9d)}
+.steps article{position:relative;z-index:2}
+.ib{position:relative;width:82px;height:82px;margin:0 auto 32px;border:1px solid rgba(126,220,217,.75);border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(25,74,101,.96),rgba(4,42,69,.98));box-shadow:0 0 0 1px rgba(255,255,255,.08),inset 0 1px rgba(255,255,255,.16),0 12px 30px rgba(0,0,0,.28),0 0 22px rgba(54,220,134,.19)}
+.ib:before{content:"";position:absolute;inset:3px;border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.17),transparent 36%);pointer-events:none}
+.ib svg{width:45px;height:45px;fill:none;stroke:#72e34c;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+.ib b{position:absolute;z-index:4;right:-12px;top:-12px;width:31px;height:31px;display:grid;place-items:center;border-radius:50%;background:#20bf50;color:white;border:3px solid #163f57;font-size:16px;font-weight:900}
+.steps h3{margin:0 auto 15px;font-size:clamp(20px,1.8vw,25px);line-height:1.2;font-weight:900}
+.steps p{margin:0 auto;max-width:300px;color:#cfdae3;font-size:clamp(14.5px,1.15vw,17px);line-height:1.6}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-width:440px;margin-top:60px;padding:18px 34px;border-radius:14px;background:linear-gradient(135deg,#29c654,#12af42);box-shadow:0 13px 30px rgba(19,185,68,.26);color:#fff;text-decoration:none;font-size:20px;font-weight:900;transition:.2s}
+.cta span{font-size:28px;line-height:1}
+.cta:hover{transform:translateY(-2px)}
+@media(max-width:1000px){
+  .steps{grid-template-columns:1fr 1fr;gap:45px 24px;margin-top:55px}
+  .line{display:none}
+  .intro br{display:none}
+  .cta{margin-top:45px;min-width:340px}
+}
+@media(max-width:600px){
+  .flow{padding:40px 16px 44px}
+  .flow h2{font-size:32px;letter-spacing:-1.2px}
+  .intro{font-size:15.5px}
+  .steps{grid-template-columns:1fr;gap:34px;margin-top:44px}
+  .ib{margin-bottom:18px}
+  .steps p{max-width:360px}
+  .cta{width:100%;min-width:0;margin-top:36px;padding:16px 18px;font-size:16.5px}
+  .cta span{font-size:22px}
+}
+</style>

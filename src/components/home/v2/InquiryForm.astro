@@ -14,89 +14,89 @@ const labelClass = 'block text-[13.5px] font-bold text-[#123B66] mb-1.5';
 ---
 
 <form id={`${prefix}-form`} class="flex flex-col gap-4" novalidate>
-  <div>
-    <label for={`${prefix}-service`} class={labelClass}>Was benötigen Sie? <span class="text-[#d64545]" aria-hidden="true">*</span></label>
+  <div data-ps="src/components/home/v2/InquiryForm.astro:k8zgnt">
+    <label for={`${prefix}-service`} class={labelClass} data-ps="src/components/home/v2/InquiryForm.astro:5stv6b">Was benötigen Sie? <span class="text-[#d64545]" aria-hidden="true" data-ps="src/components/home/v2/InquiryForm.astro:dc5exq">*</span></label>
     <select id={`${prefix}-service`} name="leistung" required class={fieldClass}>
       <option value="" selected disabled>Bitte auswählen</option>
       <option value="installation">Rauchmelder installieren</option>
       <option value="wartung">Wartung / Prüfung</option>
       <option value="austausch">Austausch von Geräten</option>
       <option value="mehrere">Mehrere Leistungen</option>
-      <option value="unsicher">Noch unsicher – Beratung gewünscht</option>
+      <option value="unsicher">Noch unsicher (Beratung gewünscht)</option>
     </select>
   </div>
 
-  <div class="grid grid-cols-2 gap-4">
-    <div>
-      <label for={`${prefix}-flats`} class={labelClass}>Anzahl Wohnungen <span class="font-normal text-[#8AA0B8]">(grob)</span></label>
+  <div class="grid grid-cols-2 gap-4" data-ps="src/components/home/v2/InquiryForm.astro:quc1dt">
+    <div data-ps="src/components/home/v2/InquiryForm.astro:quc1du">
+      <label for={`${prefix}-flats`} class={labelClass} data-ps="src/components/home/v2/InquiryForm.astro:5stv6a">Anzahl Wohnungen <span class="font-normal text-[#8AA0B8]" data-ps="src/components/home/v2/InquiryForm.astro:dc5exr">(grob)</span></label>
       <select id={`${prefix}-flats`} name="wohnungen" class={fieldClass}>
         <option value="" selected>Keine Angabe</option>
         <option value="1">1 Wohnung</option>
-        <option value="2-5">2–5 Wohnungen</option>
-        <option value="6-20">6–20 Wohnungen</option>
+        <option value="2-5">2-5 Wohnungen</option>
+        <option value="6-20">6-20 Wohnungen</option>
         <option value="20+">Mehr als 20</option>
       </select>
     </div>
-    <div>
-      <label for={`${prefix}-detectors`} class={labelClass}>Anzahl Rauchmelder <span class="font-normal text-[#8AA0B8]">(grob)</span></label>
+    <div data-ps="src/components/home/v2/InquiryForm.astro:quc1dv">
+      <label for={`${prefix}-detectors`} class={labelClass} data-ps="src/components/home/v2/InquiryForm.astro:5stv69">Anzahl Rauchmelder <span class="font-normal text-[#8AA0B8]" data-ps="src/components/home/v2/InquiryForm.astro:dc5exs">(grob)</span></label>
       <select id={`${prefix}-detectors`} name="rauchmelder" class={fieldClass}>
         <option value="" selected>Keine Angabe</option>
         <option value="0">Noch keine vorhanden</option>
         <option value="1-5">Bis 5</option>
-        <option value="6-20">6–20</option>
+        <option value="6-20">6-20</option>
         <option value="20+">Mehr als 20</option>
         <option value="unbekannt">Weiß ich nicht</option>
       </select>
     </div>
   </div>
 
-  <div>
-    <label for={`${prefix}-district`} class={labelClass}>Berliner Bezirk oder PLZ</label>
+  <div data-ps="src/components/home/v2/InquiryForm.astro:quc1dw">
+    <label for={`${prefix}-district`} class={labelClass} data-ps="src/components/home/v2/InquiryForm.astro:5stv5n">Berliner Bezirk oder PLZ</label>
     <input type="text" id={`${prefix}-district`} name="bezirk" placeholder="z. B. Neukölln oder 12043" autocomplete="address-level2" class={fieldClass} />
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div>
-      <label for={`${prefix}-name`} class={labelClass}>Name <span class="text-[#d64545]" aria-hidden="true">*</span></label>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-ps="src/components/home/v2/InquiryForm.astro:quc1dx">
+    <div data-ps="src/components/home/v2/InquiryForm.astro:quc1dy">
+      <label for={`${prefix}-name`} class={labelClass} data-ps="src/components/home/v2/InquiryForm.astro:5stv5m">Name <span class="text-[#d64545]" aria-hidden="true" data-ps="src/components/home/v2/InquiryForm.astro:dc5eye">*</span></label>
       <input type="text" id={`${prefix}-name`} name="name" required autocomplete="name" placeholder="Ihr Name" class={fieldClass} />
     </div>
-    <div>
-      <label for={`${prefix}-phone`} class={labelClass}>Telefonnummer <span class="font-normal text-[#8AA0B8]">(optional)</span></label>
+    <div data-ps="src/components/home/v2/InquiryForm.astro:quc1dz">
+      <label for={`${prefix}-phone`} class={labelClass} data-ps="src/components/home/v2/InquiryForm.astro:5stv5l">Telefonnummer <span class="font-normal text-[#8AA0B8]" data-ps="src/components/home/v2/InquiryForm.astro:dc5eyf">(optional)</span></label>
       <input type="tel" id={`${prefix}-phone`} name="telefon" autocomplete="tel" placeholder="Für schnelle Rückfragen" class={fieldClass} />
     </div>
   </div>
 
-  <div>
-    <label for={`${prefix}-email`} class={labelClass}>E-Mail <span class="text-[#d64545]" aria-hidden="true">*</span></label>
+  <div data-ps="src/components/home/v2/InquiryForm.astro:quc1e0">
+    <label for={`${prefix}-email`} class={labelClass} data-ps="src/components/home/v2/InquiryForm.astro:5stv5k">E-Mail <span class="text-[#d64545]" aria-hidden="true" data-ps="src/components/home/v2/InquiryForm.astro:dc5eyg">*</span></label>
     <input type="email" id={`${prefix}-email`} name="email" required autocomplete="email" placeholder="name@beispiel.de" class={fieldClass} />
   </div>
 
-  <div>
-    <label for={`${prefix}-message`} class={labelClass}>Nachricht <span class="font-normal text-[#8AA0B8]">(optional)</span></label>
+  <div data-ps="src/components/home/v2/InquiryForm.astro:quc1e1">
+    <label for={`${prefix}-message`} class={labelClass} data-ps="src/components/home/v2/InquiryForm.astro:5stv5j">Nachricht <span class="font-normal text-[#8AA0B8]" data-ps="src/components/home/v2/InquiryForm.astro:dc5eyh">(optional)</span></label>
     <textarea id={`${prefix}-message`} name="nachricht" rows="3" placeholder="Kurz beschreiben, worum es geht …" class:list={[fieldClass, 'resize-y min-h-[84px]']}></textarea>
   </div>
-  <p id={`${prefix}-error`} class="hidden text-[14px] font-bold text-[#b3362e] bg-[#fdf0ef] border border-[#f2c9c5] rounded-xl px-4 py-3 m-0" role="alert"></p>
+  <p id={`${prefix}-error`} class="hidden text-[14px] font-bold text-[#b3362e] bg-[#fdf0ef] border border-[#f2c9c5] rounded-xl px-4 py-3 m-0" role="alert" data-ps="src/components/home/v2/InquiryForm.astro:fhrb1d"></p>
 
-  <button type="submit" class="inline-flex items-center justify-center gap-2.5 bg-[#25b94b] hover:bg-[#1fa343] text-white text-[16px] font-extrabold px-6 py-[14px] rounded-xl transition-all shadow-[0_8px_20px_rgba(37,185,75,0.3)] hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#062B4A] cursor-pointer">
+  <button type="submit" class="inline-flex items-center justify-center gap-2.5 bg-[#25b94b] hover:bg-[#1fa343] text-white text-[16px] font-extrabold px-6 py-[14px] rounded-xl transition-all shadow-[0_8px_20px_rgba(37,185,75,0.3)] hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#062B4A] cursor-pointer" data-ps="src/components/home/v2/InquiryForm.astro:fl03do">
     {buttonLabel}
     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z" /><path d="M22 2 11 13" /></svg>
   </button>
 
-  <p class="text-[12.5px] text-[#6B7C92] leading-relaxed m-0">
-    Kostenlos · unverbindlich · persönliche Rückmeldung. Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu – Details in der <a href="/datenschutzerklaerung/" class="underline hover:text-[#123B66]">Datenschutzerklärung</a>.
+  <p class="text-[12.5px] text-[#6B7C92] leading-relaxed m-0" data-ps="src/components/home/v2/InquiryForm.astro:fhrb1e">
+    Kostenlos · unverbindlich · persönliche Rückmeldung. Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu. Details in der <a href="/datenschutzerklaerung/" class="underline hover:text-[#123B66]" data-ps="src/components/home/v2/InquiryForm.astro:mlp7qd">Datenschutzerklärung</a>.
   </p>
 </form>
 
 {/* Erfolgs-Panel */}
-<div id={`${prefix}-success`} class="hidden flex-col items-center text-center py-8">
-  <span class="flex items-center justify-center w-16 h-16 rounded-full bg-[#EAF6E4] border-2 border-[#63c62f] mb-5" aria-hidden="true">
+<div id={`${prefix}-success`} class="hidden flex-col items-center text-center py-8" data-ps="src/components/home/v2/InquiryForm.astro:quc1e2">
+  <span class="flex items-center justify-center w-16 h-16 rounded-full bg-[#EAF6E4] border-2 border-[#63c62f] mb-5" aria-hidden="true" data-ps="src/components/home/v2/InquiryForm.astro:dc5eyi">
     <svg class="w-8 h-8 text-[#25b94b]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
   </span>
-  <h3 class="text-[22px] font-extrabold text-[#062B4A] mb-2 mt-0">Vielen Dank für Ihre Anfrage!</h3>
-  <p class="text-[15px] text-[#3D5068] max-w-md mb-6 leading-relaxed">
-    Wir prüfen Ihre Angaben persönlich und melden uns mit den nächsten Schritten bei Ihnen. Bei Dringlichkeiten erreichen Sie uns direkt unter <a href="tel:+493092105026" class="font-bold text-[#123B66] hover:text-[#25b94b]">030 9210 5026</a>.
+  <h3 class="text-[22px] font-extrabold text-[#062B4A] mb-2 mt-0" data-ps="src/components/home/v2/InquiryForm.astro:3u7r4u">Vielen Dank für Ihre Anfrage!</h3>
+  <p class="text-[15px] text-[#3D5068] max-w-md mb-6 leading-relaxed" data-ps="src/components/home/v2/InquiryForm.astro:fhrb1f">
+    Wir prüfen Ihre Angaben persönlich und melden uns mit den nächsten Schritten bei Ihnen. Bei Dringlichkeiten erreichen Sie uns direkt unter <a href="tel:+493086328386" class="font-bold text-[#123B66] hover:text-[#25b94b]" data-ps="src/components/home/v2/InquiryForm.astro:lcmw6i">030 863 28 38 6</a>.
   </p>
-  <button type="button" id={`${prefix}-reset`} class="inline-flex items-center gap-2 bg-[#062B4A] hover:bg-[#0B3A64] text-white text-[14px] font-bold px-5 py-2.5 rounded-xl transition-colors cursor-pointer">
+  <button type="button" id={`${prefix}-reset`} class="inline-flex items-center gap-2 bg-[#062B4A] hover:bg-[#0B3A64] text-white text-[14px] font-bold px-5 py-2.5 rounded-xl transition-colors cursor-pointer" data-ps="src/components/home/v2/InquiryForm.astro:rzy375">
     Weitere Anfrage senden
   </button>
 </div>

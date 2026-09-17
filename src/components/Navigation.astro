@@ -13,220 +13,178 @@ import { SITE } from '@/config/site';
     scrollbar-width: none;
   }
 
-  /* MESSKLAR Logo Styles – v26 enger Rand */
+  /* Logo Styles */
   .nav-logo {
-    --navy: #032b66;
-    --green: #63c62f;
-    --text: #1c2740;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: transparent;
+  }
+  .detector-box {
     position: relative;
-    aspect-ratio: 991 / 279;
-    background: #FFFFFF;
-    overflow: hidden;
+    width: 38px;
+    height: 38px;
+    shrink: 0;
   }
-  .stage {
-    position: absolute;
-    /* enger Zuschnitt: nur ca. 10–15 px optischer Rand rund um das Logo */
-    left: -5.046%;
-    top: -53.047%;
+  .detector-box svg.detector-svg {
     width: 100%;
-    aspect-ratio: 1202 / 601;
-    transform: scale(1.21292);
-    transform-origin: 0 0;
-    container-type: inline-size;
-    background: #FFFFFF;
+    height: 100%;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
   }
-  .detector {
+  .detector-box .check {
     position: absolute;
-    left: 5.0%;
-    top: 26.3%;
-    width: 21.7%;
-    background: #FFFFFF;
-    filter: none;
+    right: -4px;
+    bottom: -2px;
+    width: 18px;
+    height: 18px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
   }
-  .detector svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    filter: brightness(0.95);
-  }
-  .check {
-    position: absolute;
-    left: 16.8%;
-    top: 34.1%;
-    width: 12.8%;
-    overflow: visible;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.03));
-  }
-  .check .mark {
+  .detector-box .check .mark {
     fill: url(#logo-checkGreen);
-    stroke: #fff;
-    stroke-width: 10;
+    stroke: #0a101d;
+    stroke-width: 14;
     stroke-linejoin: round;
     paint-order: stroke fill;
   }
-  .brand {
-    position: absolute;
-    left: 30.35%;
-    top: 30.0%;
-    width: max-content;
-    font-family: Arial, Helvetica, sans-serif;
-    text-rendering: geometricPrecision;
-  }
-  .wordmark {
+
+  .brand-text {
     display: flex;
-    align-items: baseline;
-    width: max-content;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+  }
+  .brand-title {
+    font-family: var(--font-heading, sans-serif);
+    font-size: 16px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.02em;
     white-space: nowrap;
-    font-size: 10.77cqw;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.06em;
-    transform: scaleY(0.94);
-    transform-origin: left top;
   }
-  .wordmark .mess {
-    color: var(--navy);
-  }
-  .wordmark .klar {
-    color: var(--green);
+  .brand-subline {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #63c62f;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-top: 2px;
   }
 
-  .slogan {
-    position: absolute;
-    left: 0;
-    top: 94.12%;
-    width: 100%;
-    color: #243040;
-  }
-  .slogan .headline {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    column-gap: 1.35cqw;
-    white-space: nowrap;
-  }
-  .slogan .line {
-    width: 100%;
-    border-top: max(1px, 0.23cqw) solid #63c62f;
-  }
-  .slogan .title {
-    text-align: center;
-    font-size: 4.17cqw;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: #253242;
-  }
-  .slogan .subline {
-    width: 100%;
-    margin-top: 0.73cqw;
-    text-align: center;
-    white-space: nowrap;
-    font-size: 2.03cqw;
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: 0.34em;
-    color: #243040;
+  /* Scrolled State */
+  #navbar.is-scrolled {
+    background-color: rgba(10, 15, 25, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   }
 </style>
 
-<header id="navbar" class="sticky top-0 z-50 bg-white border-b border-border shadow-xs" data-ps="src/components/Navigation.astro:dt8k87">
+<header id="navbar" class="fixed top-0 left-0 right-0 w-full z-50 bg-[#062B4A] border-b border-white/10 transition-all duration-300 shadow-md" data-ps="src/components/Navigation.astro:dt8k87">
   <nav class="h-[68px] flex items-center" data-ps="src/components/Navigation.astro:m59h3b">
     <Container class="flex justify-between items-center w-full !pl-2 sm:!pl-3 md:!pl-4">
       
       {/* Logo */}
-      <a href="/" class="flex items-center no-underline shrink-0 mr-2 sm:mr-4 md:mr-6 py-2" aria-label="MESSKLAR Startseite" data-ps="src/components/Navigation.astro:logo-link">
-        <div class="nav-logo h-[48px] sm:h-[50px] md:h-[52px] w-auto" role="img" aria-label="MESSKLAR Logo mit Rauchmelder, grünem Haken und Slogan Rauchmelderservice Installation und Wartung" data-ps="src/components/Navigation.astro:logo-container">
-          <div class="stage" data-ps="src/components/Navigation.astro:logo-stage">
-            <div class="detector" aria-hidden="true" data-ps="src/components/Navigation.astro:logo-detector">
-              <svg viewBox="0 0 800 800">
-                <defs>
-                  <radialGradient id="logo-a" cx="38%" cy="13%" r="91%"><stop stop-color="#f2f2f2"/><stop offset=".43" stop-color="#eeeeee"/><stop offset=".73" stop-color="#e2e2e2"/><stop offset=".94" stop-color="#cecece"/><stop offset="1" stop-color="#bebebe"/></radialGradient>
-                  <radialGradient id="logo-b" cx="45%" cy="24%" r="80%"><stop stop-color="#f2f2f2"/><stop offset=".52" stop-color="#eeeeee"/><stop offset=".82" stop-color="#dddddd"/><stop offset="1" stop-color="#c4c4c4"/></radialGradient>
-                  <radialGradient id="logo-c" cx="43%" cy="22%" r="80%"><stop stop-color="#f2f2f2"/><stop offset=".67" stop-color="#eaeaea"/><stop offset="1" stop-color="#cdcdcd"/></radialGradient>
-                  <linearGradient id="logo-v" x2="0" y2="1"><stop stop-color="#050505"/><stop offset=".5" stop-color="#161616"/><stop offset="1" stop-color="#020202"/></linearGradient>
-                  <radialGradient id="logo-l" cx="50%" cy="40%"><stop stop-color="#f7ffaf"/><stop offset=".2" stop-color="#baff32"/><stop offset=".56" stop-color="#59cf00"/><stop offset="1" stop-color="#163f08"/></radialGradient>
-                  <filter id="logo-s"><feGaussianBlur stdDeviation="10"/></filter>
-                </defs>
-                <path d="M82 245C82 141 221 69 400 69s318 72 318 176v171c0 137-145 241-318 241S82 553 82 416z" fill="url(#logo-a)"/>
-                <path d="M99 312c59-73 169-113 301-113s242 40 301 113" fill="none" stroke="#888" stroke-width="4" opacity=".42"/>
-                <path d="M103 319c63-69 170-104 297-104s234 35 297 104" fill="none" stroke="#fff" stroke-width="6" opacity=".92"/>
-                <ellipse cx="400" cy="466" rx="312" ry="191" fill="url(#logo-b)"/>
-                <ellipse cx="400" cy="469" rx="267" ry="145" fill="none" stroke="#bdbdbd" stroke-width="4" opacity=".27"/>
-                <ellipse cx="400" cy="470" rx="250" ry="132" fill="none" stroke="url(#logo-v)" stroke-width="33"/>
-                <g fill="#f1f1f1">
-                  <path d="M392 329h16l4 89h-24z"/><path d="M203 383l14-10 52 65-18 13z"/><path d="M597 383l-14-10-52 65 18 13z"/><path d="M154 458l3-17 85 20-4 21z"/><path d="M646 458l-3-17-85 20 4 21z"/><path d="M222 552l-12-12 67-49 15 16z"/><path d="M578 552l12-12-67-49-15 16z"/>
-                </g>
-                <ellipse cx="400" cy="487" rx="215" ry="113" fill="#e4e4e4"/>
-                <ellipse cx="400" cy="493" rx="169" ry="78" fill="none" stroke="url(#logo-v)" stroke-width="26"/>
-                <g fill="#efefef">
-                  <path d="M394 405h12l3 56h-18z"/><path d="M286 436l11-8 38 40-14 11z"/><path d="M514 436l-11-8-38 40 14 11z"/><path d="M252 493l2-13 55 11-3 16z"/><path d="M548 493l-2-13-55 11 3 16z"/>
-                </g>
-                <ellipse cx="400" cy="520" rx="147" ry="87" fill="url(#logo-c)" stroke="#f8f8f8" stroke-width="9"/>
-                <ellipse cx="400" cy="543" rx="89" ry="54" fill="url(#logo-c)" stroke="#aaa" stroke-width="2.2"/>
-                <ellipse cx="400" cy="541" rx="76" ry="44" fill="none" stroke="#fff" stroke-width="2" opacity=".74"/>
-                <rect x="357" y="323" width="86" height="31" rx="16" fill="#ededed" stroke="#777" stroke-width="3"/>
-                <rect x="363" y="329" width="74" height="19" rx="10" fill="url(#logo-l)"/>
-                <ellipse cx="400" cy="333" rx="24" ry="4.3" fill="#fff" opacity=".66"/>
-                <path d="M119 409c40-84 142-139 281-139s241 55 281 139" fill="none" stroke="#fff" stroke-width="15" opacity=".13"/>
-              </svg>
-            </div>
-
-            <svg class="check" viewBox="0 0 300 320" aria-hidden="true" data-ps="src/components/Navigation.astro:logo-check">
-              <defs>
-                <linearGradient id="logo-checkGreen" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0" stop-color="#58bd27"/>
-                  <stop offset=".56" stop-color="#5fc52a"/>
-                  <stop offset="1" stop-color="#4eb820"/>
-                </linearGradient>
-              </defs>
-              <path class="mark" d="M23 208C18 204 12 206 9 211C6 217 8 224 13 229L89 299C94 304 101 307 108 306C114 305 119 301 123 295L291 25C296 17 295 10 289 7C284 4 278 6 273 12L101 244C98 249 94 252 89 253C84 254 79 252 74 248Z"/>
-            </svg>
-
-            <div class="brand" aria-hidden="true" data-ps="src/components/Navigation.astro:logo-brand">
-              <div class="wordmark" data-ps="src/components/Navigation.astro:logo-wordmark">
-                <span class="mess" data-ps="src/components/Navigation.astro:i2om6e">MESS</span><span class="klar" data-ps="src/components/Navigation.astro:i2om6f">KLAR</span>
-              </div>
-
-              <div class="slogan" data-ps="src/components/Navigation.astro:logo-slogan">
-                <div class="headline" data-ps="src/components/Navigation.astro:logo-headline">
-                  <span class="line" data-ps="src/components/Navigation.astro:i2om6g"></span>
-                  <span class="title" data-ps="src/components/Navigation.astro:i2om6h">Rauchmelderservice</span>
-                  <span class="line" data-ps="src/components/Navigation.astro:i2om6i"></span>
-                </div>
-                <div class="subline" data-ps="src/components/Navigation.astro:logo-subline">INSTALLATION &amp; WARTUNG</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <a href="/" class="flex items-center no-underline shrink-0 mr-2 sm:mr-4 md:mr-6 py-2" aria-label="Rauchmelderservice Startseite" data-ps="src/components/Navigation.astro:logo-link">
+        <img
+          src="https://pagesmith-cdn.com/0c80a694/images/Logo_Normcheck_Rauchmelder-320-c7799d-320.webp"
+          alt="Normcheck Rauchmelder Service Berlin Logo"
+          class="h-8 sm:h-9 md:h-10 w-auto max-w-[170px] sm:max-w-[210px] md:max-w-[240px] object-contain"
+          width="320"
+          height="72"
+          loading="eager"
+          decoding="async"
+          data-ps="src/components/Navigation.astro:logo-img"
+        />
       </a>
 
       {/* Menu items: Single row, swipeable on mobile */}
       <div class="flex items-center overflow-x-auto no-scrollbar scroll-smooth whitespace-nowrap py-1 px-1 shrink min-w-0 w-full md:w-auto justify-between sm:justify-around md:justify-start" data-ps="src/components/Navigation.astro:gqvsdc">
         <div class="flex flex-nowrap gap-1.5 sm:gap-3 md:gap-5 lg:gap-7 items-center text-[12px] sm:text-[13px] lg:text-[14px]" data-ps="src/components/Navigation.astro:gqvsde">
-          <a href="/#service" class="px-2.5 py-1 font-bold text-secondary uppercase no-underline hover:text-[#1AAAE6] transition-colors shrink-0 whitespace-nowrap" data-ps="src/components/Navigation.astro:nav-link-services">Leistungen</a>
-          <a href="/#nachweis" class="px-2.5 py-1 font-bold text-secondary uppercase no-underline hover:text-[#1AAAE6] transition-colors shrink-0 whitespace-nowrap" data-ps="src/components/Navigation.astro:nav-link-duties">Melder-Nachweis</a>
-          <a href="/#koordination" class="px-2.5 py-1 font-bold text-secondary uppercase no-underline hover:text-[#1AAAE6] transition-colors shrink-0 whitespace-nowrap" data-ps="src/components/Navigation.astro:nav-link-appointments">Mietertermine</a>
-          <a href="/#einsatzgebiet" class="px-2.5 py-1 font-bold text-secondary uppercase no-underline hover:text-[#1AAAE6] transition-colors shrink-0 whitespace-nowrap" data-ps="src/components/Navigation.astro:nav-link-districts">Bezirke</a>
+          <a href="/#service" class="px-2.5 py-1 font-bold text-white/90 uppercase no-underline hover:text-[#63c62f] transition-colors shrink-0 whitespace-nowrap" data-ps="src/components/Navigation.astro:nav-link-services">Leistungen</a>
+          <a href="/#nachweis" class="px-2.5 py-1 font-bold text-white/90 uppercase no-underline hover:text-[#63c62f] transition-colors shrink-0 whitespace-nowrap" data-ps="src/components/Navigation.astro:nav-link-duties">Protokoll</a>
+          <a href="/#pflicht" class="px-2.5 py-1 font-bold text-white/90 uppercase no-underline hover:text-[#63c62f] transition-colors shrink-0 whitespace-nowrap" data-ps="src/components/Navigation.astro:nav-link-appointments">Pflicht</a>
+          <a href="/#ansprechpartner" class="px-2.5 py-1 font-bold text-white/90 uppercase no-underline hover:text-[#63c62f] transition-colors shrink-0 whitespace-nowrap" data-ps="src/components/Navigation.astro:nav-link-districts">Warum wir</a>
         </div>
       </div>
 
       {/* Buttons: Hidden on mobile (md breakpoint = tablet and up) */}
-      <div class="hidden md:flex items-center gap-2 lg:gap-4 shrink-0 pl-3 lg:pl-6" data-ps="src/components/Navigation.astro:cta-container">
+      <div class="hidden md:flex items-center gap-2.5 lg:gap-3.5 shrink-0 pl-3 lg:pl-6" data-ps="src/components/Navigation.astro:cta-container">
         <a 
           href="/#ersteinschaetzung" 
-          class="bg-[#25b94b] hover:bg-[#20a340] text-white text-[14px] md:text-[15px] font-bold px-4 py-2.5 rounded-[9px] no-underline transition-all shadow-sm"
-          data-ps="src/components/Navigation.astro:green-btn">Kosten-Check</a>
+          class="inline-flex items-center justify-center text-white text-[13.5px] lg:text-[14.5px] font-black px-4 py-2 rounded-full no-underline transition-all duration-200 border-[1.5px] border-[rgba(103,235,66,0.9)] bg-gradient-to-b from-[rgba(49,184,54,0.75)] to-[rgba(16,137,41,0.7)] backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_0_12px_rgba(66,230,49,0.3)] hover:brightness-110 hover:-translate-y-0.5 whitespace-nowrap"
+          data-ps="src/components/Navigation.astro:green-btn">Kostenlose Anfrage</a>
         <a 
-          href="tel:+493092105026" 
-          class="flex items-center gap-2 bg-[#1AAAE6] hover:bg-[#1AAAE6]/90 text-white text-[14px] md:text-[15px] font-bold px-3 py-2 md:px-4 md:py-2.5 rounded-[9px] no-underline transition-all shadow-sm"
+          href="tel:+493086328386" 
+          class="inline-flex items-center gap-2 text-white border-[1.5px] border-[rgba(190,211,225,0.4)] bg-gradient-to-b from-[rgba(70,104,132,0.4)] to-[rgba(36,71,100,0.35)] text-[13.5px] lg:text-[14.5px] font-black px-3.5 py-1.5 rounded-full no-underline backdrop-blur-md transition-all duration-200 shadow-[inset_0_1px_rgba(255,255,255,0.12)] hover:border-[rgba(214,230,241,0.55)] hover:-translate-y-0.5 whitespace-nowrap"
           data-ps="src/components/Navigation.astro:phone-cta"
         >
-          <span class="whitespace-nowrap" data-ps="src/components/Navigation.astro:i2om6i">030 9210 5026</span>
+          <span class="w-6 h-6 rounded-full flex items-center justify-center bg-[rgba(132,164,190,0.25)] border border-white/10 shrink-0" aria-hidden="true" data-ps="src/components/Navigation.astro:i2om6i">
+            <svg viewBox="0 0 48 48" class="w-3.5 h-3.5 stroke-white fill-none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 7 8 11c-2 2 1 11 8 19s16 12 19 10l5-6-10-7-5 5c-5-3-9-7-11-12l5-4z"/>
+            </svg>
+          </span>
+          <span class="whitespace-nowrap" data-ps="src/components/Navigation.astro:i2om6i">030 863 28 38 6</span>
         </a>
       </div>
 
     </Container>
   </nav>
 </header>
+
+<script is:inline>
+  const nav = document.getElementById('navbar');
+  if (nav) {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        nav.classList.add('is-scrolled');
+      } else {
+        nav.classList.remove('is-scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  const NAV_GAP = 14;
+
+  function scrollToSectionHeading(hash) {
+    const id = (hash || '').replace(/^#/, '');
+    if (!id) return false;
+    const el = document.getElementById(id);
+    if (!el) return false;
+    
+    // Wenn das Element selbst eine Überschrift oder die Formular-Karte ist, dieses nehmen, sonst die erste Überschrift darin
+    let target = el;
+    if (!el.matches('h1, h2, h3, .card')) {
+      const heading = el.querySelector('h1, h2, h3');
+      if (heading) target = heading;
+    }
+    
+    const navH = nav ? nav.offsetHeight : 68;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - navH - NAV_GAP;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    return true;
+  }
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href') || '';
+    if (!href.includes('#')) return;
+    let url;
+    try { url = new URL(href, window.location.href); } catch { return; }
+    if (url.pathname !== window.location.pathname) return;
+    if (!url.hash) return;
+    if (scrollToSectionHeading(url.hash)) {
+      e.preventDefault();
+      history.pushState(null, '', url.hash);
+    }
+  });
+
+  window.addEventListener('load', () => {
+    if (window.location.hash) {
+      requestAnimationFrame(() => scrollToSectionHeading(window.location.hash));
+    }
+  });
+</script>

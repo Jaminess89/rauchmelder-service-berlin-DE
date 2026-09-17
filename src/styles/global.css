@@ -4,7 +4,8 @@
 
 :root {
   /* Layout */
-  --nav-height: 80px;
+  --nav-height: 68px;
+  --page-gutter: 20px;
 
   /* Typography */
   --font-sans: 'Open Sans', system-ui, sans-serif;
@@ -42,6 +43,18 @@
   --text-h1: 64px;
   --text-h2: 48px;
   --text-h3: 44px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-gutter: 60px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --page-gutter: 115px;
+  }
 }
 
 @theme {
@@ -86,7 +99,7 @@ html, body {
 }
 
 html {
-  scroll-padding-top: var(--nav-height);
+  scroll-padding-top: 84px;
   scroll-behavior: smooth;
 }
 

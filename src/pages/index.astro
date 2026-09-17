@@ -20,10 +20,10 @@ import { SITE } from '@/config/site';
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "MESSKLAR Rauchmelderservice",
-  "description": "Rauchmelder in Berlin installieren, warten oder prüfen lassen – für Vermieter, Eigentümer und Hausverwaltungen, inklusive digitaler Dokumentation.",
+  "name": "Normcheck Rauchmelderservice",
+  "description": "Rauchmelder in Berlin installieren, warten oder prüfen lassen: für Vermieter, Eigentümer und Hausverwaltungen, inklusive digitaler Dokumentation.",
   "url": SITE.url,
-  "telephone": "+493092105026",
+  "telephone": "+493086328386",
   "areaServed": [
     "Berlin",
     "Berlin-Mitte",
@@ -44,16 +44,33 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title="Rauchmelderservice Berlin – Installation & Wartung | Messklar"
-  description="Rauchmelder in Berlin installieren, warten oder prüfen lassen. Für Vermieter, Eigentümer & Hausverwaltungen – inklusive digitaler Dokumentation. Jetzt unverbindlich anfragen."
+  title="Rauchmelderservice Berlin | Installation & Wartung | Normcheck"
+  description="Rauchmelder in Berlin installieren, warten oder prüfen lassen. Für Vermieter, Eigentümer & Hausverwaltungen, inklusive digitaler Dokumentation. Jetzt unverbindlich anfragen."
   jsonLd={jsonLd}
 >
   <HeroSection />
   <TrustStrip />
   <ServicesSection />
   <PricingContact />
-  <CheckSection />
-  <LandlordSection />
+  <div class="relative overflow-hidden" data-ps="src/pages/index.astro:shared-landlord-check-bg">
+    {/* Ein einziges durchgehendes Hintergrundbild für 4-Punkte-Check und Vermieter-Bereich */}
+    <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true" data-ps="src/pages/index.astro:shared-bg-img">
+      <img
+        src="https://pagesmith-cdn.com/0c80a694/images/cecilia-miraldi-tylzY0GiFpY-unsplash-1536-9b5385-1024.webp"
+        srcset="https://pagesmith-cdn.com/0c80a694/images/cecilia-miraldi-tylzY0GiFpY-unsplash-1536-9b5385-320.webp 320w, https://pagesmith-cdn.com/0c80a694/images/cecilia-miraldi-tylzY0GiFpY-unsplash-1536-9b5385-640.webp 640w, https://pagesmith-cdn.com/0c80a694/images/cecilia-miraldi-tylzY0GiFpY-unsplash-1536-9b5385-768.webp 768w, https://pagesmith-cdn.com/0c80a694/images/cecilia-miraldi-tylzY0GiFpY-unsplash-1536-9b5385-1024.webp 1024w, https://pagesmith-cdn.com/0c80a694/images/cecilia-miraldi-tylzY0GiFpY-unsplash-1536-9b5385-1536.webp 1536w"
+        sizes="100vw"
+        alt=""
+        class="w-full h-full object-cover object-center"
+        loading="lazy"
+        data-ps="src/pages/index.astro:shared-bg-pic"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-[#F4F8FB]/90 to-white/75 backdrop-blur-[1px]" data-ps="src/pages/index.astro:shared-bg-grad1"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white/90" data-ps="src/pages/index.astro:shared-bg-grad2"></div>
+    </div>
+
+    <CheckSection />
+    <LandlordSection />
+  </div>
   <ProofSection />
   <DutySection />
   <ProcessSection />

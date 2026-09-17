@@ -47,6 +47,10 @@ const finalCanonicalURL = canonicalUrl || new URL(Astro.url.pathname, SITE.url).
 const ogImageURL = finalImage.startsWith('http') ? finalImage : new URL(finalImage, SITE.url).toString();
 ---
 
+<!-- pagesmith:site-noindex:start -->
+<meta name="robots" content="noindex, nofollow" />
+<!-- pagesmith:site-noindex:end -->
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />

@@ -1,109 +1,68 @@
 ---
-import Container from '@/components/Container.astro';
-
-const checks = [
-  { num: '01', title: 'Sind alle erforderlichen Räume ausgestattet?', text: 'Wir gleichen die vorhandenen Melder mit dem Grundriss Ihrer Wohnung ab: Schlaf- und Kinderzimmer, Flure als Rettungsweg – und ob die Verteilung zum Objekt passt.' },
-  { num: '02', title: 'Ist jeder Rauchmelder sinnvoll positioniert?', text: 'Ein Melder schützt nur, wenn er richtig sitzt: an der Decke, mit ausreichend Abstand zu Wänden, Lampen und Durchzug – nicht verdeckt von Möbeln oder Vorhängen.' },
-  { num: '03', title: 'Funktioniert der Melder zuverlässig?', text: 'Sichtprüfung von Gehäuse und Raucheintritten, Test der Alarmfunktion, Kontrolle von Verschmutzung und Beschädigungen – bei jedem einzelnen Gerät.' },
-  { num: '04', title: 'Ist der Austauschzeitpunkt noch passend?', text: 'Wir prüfen Herstellungsdatum und Batteriekonzept. Erst wenn ein Melder das Ende seiner Lebensdauer erreicht, empfehlen wir den Austausch – nicht früher.' },
-];
+/**
+ * 4-Punkte-Check Sektion
+ */
 ---
 
-<section id="pruefung" class="py-14 md:py-20 lg:py-24 bg-white scroll-mt-24" aria-labelledby="check-heading">
-  <Container>
-    <div class="max-w-3xl mb-10 md:mb-14">
-      <p class="inline-flex items-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
-        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
-        Der 4-Punkte-Check
-      </p>
-      <h2 id="check-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
-        Was wir bei einer Rauchmelder-Kontrolle prüfen
-      </h2>
-      <p class="text-[16px] sm:text-[17.5px] text-[#3D5068] leading-relaxed">
-        Ob einzelne Wohnung oder ganzer Bestand: Jede Kontrolle folgt denselben vier Fragen. So entsteht ein belastbares Bild vom Zustand Ihrer Rauchwarnmelder – und Sie wissen genau, was zu tun ist und was nicht.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-8 lg:gap-12 items-center">
-
-      {/* Grundriss-Illustration */}
-      <div class="bg-[#F4F8FB] rounded-[22px] border border-[#DCE5EF] p-5 sm:p-7 shadow-[0_10px_30px_rgba(6,43,74,0.06)]">
-        <svg viewBox="0 0 420 356" class="w-full h-auto" role="img" aria-label="Schematischer Grundriss einer Wohnung mit vier markierten Prüfpunkten der Rauchmelder-Kontrolle">
-          <defs>
-            <g id="det">
-              <circle r="11" fill="#fff" stroke="#0B3A64" stroke-width="2.5" />
-              <circle r="6.5" fill="none" stroke="#0B3A64" stroke-width="1.4" opacity=".55" />
-              <circle r="2.6" fill="#25b94b" />
-            </g>
-            <g id="pin">
-              <circle r="13.5" fill="#0B3A64" stroke="#fff" stroke-width="3" />
-            </g>
-          </defs>
-          <rect x="14" y="14" width="172" height="160" rx="4" fill="#EAF6E4" />
-          <rect x="186" y="14" width="220" height="160" rx="4" fill="#EAF6E4" />
-          <rect x="14" y="174" width="392" height="62" fill="#E9F1F7" />
-          <rect x="14" y="236" width="172" height="106" rx="4" fill="#F4F8FB" />
-          <rect x="186" y="236" width="110" height="106" rx="4" fill="#F4F8FB" />
-          <rect x="296" y="236" width="110" height="106" rx="4" fill="#F4F8FB" />
-          <g stroke="#0B3A64" stroke-width="5" stroke-linecap="round" fill="none">
-            <path d="M12 12 H408 V344 H12 Z" />
-            <path d="M184 12 V122 M184 158 V174" />
-            <path d="M12 174 H120 M156 174 H408" />
-            <path d="M12 236 H408" />
-            <path d="M184 236 V344" />
-            <path d="M294 236 V300 M294 326 V344" />
-          </g>
-          <g stroke="#8AA0B8" stroke-width="1.6" fill="none" stroke-dasharray="3 3">
-            <path d="M120 174 a36 36 0 0 1 36 -36" />
-            <path d="M184 122 a36 36 0 0 1 0 36" />
-            <path d="M294 300 a26 26 0 0 0 0 26" />
-          </g>
-          <g font-size="12.5" font-weight="700" fill="#5A7191" text-anchor="middle">
-            <text x="98" y="162">Schlafzimmer</text>
-            <text x="296" y="162">Wohnzimmer</text>
-            <text x="345" y="210">Flur</text>
-            <text x="98" y="334">Küche</text>
-            <text x="240" y="334">Bad</text>
-            <text x="351" y="334">Abstellr.</text>
-          </g>
-          <use href="#det" x="98" y="60" />
-          <use href="#det" x="296" y="60" />
-          <use href="#det" x="230" y="205" />
-          <use href="#pin" x="60" y="118" /><text x="60" y="123" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">1</text>
-          <use href="#pin" x="262" y="205" /><text x="262" y="210" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">2</text>
-          <use href="#pin" x="330" y="60" /><text x="330" y="65" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">3</text>
-          <use href="#pin" x="98" y="276" /><text x="98" y="281" text-anchor="middle" font-size="13" font-weight="800" fill="#fff">4</text>
-        </svg>
-
-        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-4 pt-4 border-t border-[#DCE5EF]">
-          <span class="flex items-center gap-2 text-[12.5px] font-bold text-[#3D5068]">
-            <svg class="w-[18px] h-[18px]" viewBox="-11 -11 22 22" aria-hidden="true"><circle r="11" fill="#fff" stroke="#0B3A64" stroke-width="2.5" /><circle r="2.6" fill="#25b94b" /></svg>
-            Rauchwarnmelder
-          </span>
-          <span class="flex items-center gap-2 text-[12.5px] font-bold text-[#3D5068]">
-            <span class="flex items-center justify-center w-[18px] h-[18px] rounded-full bg-[#0B3A64] text-white text-[10px] font-extrabold" aria-hidden="true">1</span>
-            Prüfpunkt
-          </span>
-        </div>
+<section id="pruefung" class="rwm relative z-10" data-ps="src/components/home/v2/CheckSection.astro:xqns3t">
+  <div class="wrap" data-ps="src/components/home/v2/CheckSection.astro:wrap01">
+    <div class="head-wrap flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4" data-ps="src/components/home/v2/CheckSection.astro:headwrap01">
+      <div class="max-w-3xl" data-ps="src/components/home/v2/CheckSection.astro:headtext01">
+        <div class="tag" data-ps="src/components/home/v2/CheckSection.astro:tag01">✓ &nbsp;4-PUNKTE-CHECK</div>
+        <h2 class="md:text-[34px] lg:text-[38px] md:text-left !my-2" data-ps="src/components/home/v2/CheckSection.astro:h201">Was wir bei einer Rauchmelder-Kontrolle prüfen</h2>
+        <p class="lead" data-ps="src/components/home/v2/CheckSection.astro:lead01">Vier klare Prüfpunkte, damit Sie sofort wissen, was passt, was fehlt und was wirklich gemacht werden muss.</p>
       </div>
-      {/* Prüfpunkte */}
-      <ol class="flex flex-col gap-4 list-none p-0 m-0">
-        {checks.map((check) => (
-          <li class="relative flex gap-5 rounded-[18px] border border-[#DCE5EF] bg-white p-5 sm:p-6 shadow-[0_6px_20px_rgba(6,43,74,0.05)] hover:shadow-[0_12px_30px_rgba(6,43,74,0.10)] hover:border-[#63c62f]/40 transition-all">
-            <span class="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#062B4A] text-white text-[17px] sm:text-[19px] font-black shrink-0 shadow-[0_6px_16px_rgba(6,43,74,0.25)]" aria-hidden="true">
-              {check.num}
-            </span>
-            <div>
-              <h3 class="text-[17px] sm:text-[19px] font-extrabold text-[#062B4A] leading-snug mt-0 mb-1.5">{check.title}</h3>
-              <p class="text-[14.5px] sm:text-[15px] text-[#3D5068] leading-relaxed m-0">{check.text}</p>
-            </div>
-          </li>
-        ))}
-        <li class="flex items-center gap-3 pl-1 pt-1">
-          <svg class="w-5 h-5 text-[#25b94b] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z" /><path d="m9 11.5 2.2 2.2L15.5 9.4" /></svg>
-          <p class="text-[14px] text-[#3D5068] m-0">Das Ergebnis erhalten Sie anschließend <strong class="font-bold text-[#123B66]">digital dokumentiert</strong> – inklusive aller Feststellungen je Gerät.</p>
-        </li>
-      </ol>
+      <div class="shrink-0 flex items-center justify-end max-md:hidden" data-ps="src/components/home/v2/CheckSection.astro:headimg01">
+        <img
+          src="https://pagesmith-cdn.com/0c80a694/images/photo_2026-09-14_19-40-13-Photoroom-320.webp"
+          sizes="170px"
+          alt="Rauchmelder"
+          class="w-32 lg:w-40 h-auto object-contain drop-shadow-md select-none pointer-events-none"
+          loading="lazy"
+          data-ps="src/components/home/v2/CheckSection.astro:rmimg01"
+        />
+      </div>
     </div>
-  </Container>
+
+    <div class="checkgrid" data-ps="src/components/home/v2/CheckSection.astro:grid01">
+      <div class="points" data-ps="src/components/home/v2/CheckSection.astro:pts01">
+        <article data-ps="src/components/home/v2/CheckSection.astro:art01"><i>✓</i><div data-ps="src/components/home/v2/CheckSection.astro:5j2ij1"><h3 data-ps="src/components/home/v2/CheckSection.astro:fy6009">Sind alle Pflichtbereiche ausgestattet?</h3><p data-ps="src/components/home/v2/CheckSection.astro:io4y9l">Wir prüfen, ob alle erforderlichen Räume mit Meldern ausgestattet sind.</p></div></article>
+        <article data-ps="src/components/home/v2/CheckSection.astro:art02"><i>✓</i><div data-ps="src/components/home/v2/CheckSection.astro:5j2ij0"><h3 data-ps="src/components/home/v2/CheckSection.astro:fy6008">Sitzt jeder Melder richtig?</h3><p data-ps="src/components/home/v2/CheckSection.astro:7h573j">Wir prüfen Position, Abstand und freie Funktion an der Decke.</p></div></article>
+        <article data-ps="src/components/home/v2/CheckSection.astro:art03"><i>✓</i><div data-ps="src/components/home/v2/CheckSection.astro:5j2iiz"><h3 data-ps="src/components/home/v2/CheckSection.astro:fy6007">Funktioniert jeder Melder zuverlässig?</h3><p data-ps="src/components/home/v2/CheckSection.astro:7h573k">Wir testen Alarm, Zustand und sichtbare Mängel jedes Geräts.</p></div></article>
+        <article data-ps="src/components/home/v2/CheckSection.astro:art04"><i>✓</i><div data-ps="src/components/home/v2/CheckSection.astro:5j2iiy"><h3 data-ps="src/components/home/v2/CheckSection.astro:fy6006">Ist ein Austausch wirklich nötig?</h3><p data-ps="src/components/home/v2/CheckSection.astro:7h573s">Wir empfehlen Ersatz nur, wenn ein Melder wirklich ersetzt werden sollte.</p></div></article>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+.rwm,.rwm *{box-sizing:border-box}
+.rwm{font-family:Inter,Arial,sans-serif;color:#082b50;background:transparent;padding:36px 0 28px}
+.wrap{width:100%;max-width:1500px;margin-inline:auto;padding-inline:20px}@media(min-width:768px){.wrap{padding-inline:60px}}@media(min-width:1280px){.wrap{padding-inline:115px}}
+.tag{display:inline-block;padding:5px 14px;border-radius:30px;background:#e8f8ec;color:#08793a;font-size:13px;font-weight:900;letter-spacing:1.5px}
+.rwm h2{margin:8px 0 4px; line-height:1.05; letter-spacing:-1.8px; font-weight:900;}
+.lead{margin:0;color:#425c79;font-size:clamp(15px,1.2vw,18px);line-height:1.35}
+.checkgrid{display:grid;gap:12px;align-items:stretch}
+.points{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.points article{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:center;padding:12px 18px;border:1px solid #dbe6ef;border-radius:14px;background:#fff;box-shadow:0 6px 16px #0d35520a}
+.points h3{margin:0 0 3px;font-size:clamp(15px,1.15vw,18px);line-height:1.2;font-weight:900}
+.points p{margin:0;color:#415a77;font-size:clamp(12.5px,0.92vw,14px);line-height:1.35}
+.points article>i{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#e5f8eb;color:#0a9145;font-size:22px;font-style:normal;font-weight:900}
+
+@media(max-width:1000px){
+ .points{grid-template-columns:1fr 1fr}
+ .points article{grid-template-columns:40px 1fr;gap:12px;padding:12px}
+ .points article>i{width:40px;height:40px;font-size:20px}
+}
+
+@media(max-width:680px){
+ .rwm{padding:20px 0 28px}
+ .rwm h2{letter-spacing:-1.4px;}
+ .lead{margin-bottom:14px;font-size:14px}
+ .points{grid-template-columns:1fr}
+ .points article{grid-template-columns:38px 1fr;gap:12px;padding:12px}
+ .points article>i{width:38px;height:38px;font-size:18px}
+ .points h3{font-size:16px}
+ .points p{font-size:13px}
+}
+</style>

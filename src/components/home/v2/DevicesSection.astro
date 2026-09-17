@@ -4,17 +4,17 @@ import Container from '@/components/Container.astro';
 const features = [
   {
     title: 'Geprüft nach DIN EN 14604',
-    text: 'Wir verbauen ausschließlich Geräte mit anerkannter Produktnorm – auf Wunsch mit Q-Label für erhöhte Qualitätsanforderungen.',
+    text: 'Wir verbauen ausschließlich Geräte mit anerkannter Produktnorm, auf Wunsch mit Q-Label für erhöhte Qualitätsanforderungen.',
     side: 'left',
   },
   {
     title: '10-Jahres-Batterie',
-    text: 'Langlebige Festbatterien statt jährlichem Batteriewechsel – zuverlässig über die gesamte Gerätelebensdauer.',
+    text: 'Langlebige Festbatterien statt jährlichem Batteriewechsel: zuverlässig über die gesamte Gerätelebensdauer.',
     side: 'left',
   },
   {
     title: 'Passend zum Objekt',
-    text: 'Die Auswahl richtet sich nach Räumen, Wartungskonzept und Budget – nicht nach Lagerbestand.',
+    text: 'Die Auswahl richtet sich nach Räumen, Wartungskonzept und Budget und nicht nach Lagerbestand.',
     side: 'right',
   },
   {
@@ -25,89 +25,232 @@ const features = [
 ];
 ---
 
-<section id="qualitaet" class="py-14 md:py-20 lg:py-24 bg-[#F4F8FB] scroll-mt-24" aria-labelledby="devices-heading">
+<section id="qualitaet" class="py-14 md:py-20 lg:py-24 bg-white" aria-labelledby="devices-heading" data-ps="src/components/home/v2/DevicesSection.astro:jdn801">
   <Container>
-    <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-      <p class="inline-flex items-center justify-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2f7a12] mb-3">
-        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+    <div class="text-center max-w-2xl mx-auto mb-10 md:mb-14" data-ps="src/components/home/v2/DevicesSection.astro:67nx48">
+      <p class="inline-flex items-center justify-center gap-2 text-[13px] font-extrabold tracking-[0.08em] uppercase text-[#2F6870] mb-3" data-ps="src/components/home/v2/DevicesSection.astro:yro3z2">
+        <span class="w-6 h-[3px] rounded-full bg-[#C99A63]" aria-hidden="true" data-ps="src/components/home/v2/DevicesSection.astro:7a632h"></span>
         Die eingesetzten Geräte
-        <span class="w-6 h-[3px] rounded-full bg-[#63c62f]" aria-hidden="true"></span>
+        <span class="w-6 h-[3px] rounded-full bg-[#C99A63]" aria-hidden="true" data-ps="src/components/home/v2/DevicesSection.astro:7a632g"></span>
       </p>
-      <h2 id="devices-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#062B4A] leading-[1.15] mb-4">
+      <h2 id="devices-heading" class="font-heading text-[28px] sm:text-[34px] lg:text-[40px] font-black tracking-tight text-[#123F46] leading-[1.15] mb-4" data-ps="src/components/home/v2/DevicesSection.astro:wnk15a">
         Welche Rauchmelder installieren wir?
       </h2>
-      <p class="text-[16px] text-[#3D5068] leading-relaxed m-0">
+      <p class="text-[16px] text-[#5D6E70] leading-relaxed m-0" data-ps="src/components/home/v2/DevicesSection.astro:yro3z1">
         Kein Gerät für alles: Wir wählen den Rauchwarnmelder passend zu Ihrem Objekt aus. Vier Dinge sind dabei für uns nicht verhandelbar.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 items-center max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-10 items-center max-w-5xl mx-auto" data-ps="src/components/home/v2/DevicesSection.astro:67nx49">
 
       {/* Callouts links */}
       <ul class="flex flex-col gap-5 list-none p-0 m-0 order-2 lg:order-1">
-        {features.filter(f => f.side === 'left').map((f) => (
-          <li class="relative bg-white rounded-[18px] border border-[#DCE5EF] p-5 shadow-[0_6px_20px_rgba(6,43,74,0.05)] lg:text-right">
-            <span class="hidden lg:block absolute top-1/2 -right-[42px] w-[42px] h-[2px] bg-gradient-to-l from-[#63c62f]/70 to-transparent" aria-hidden="true"></span>
-            <h3 class="text-[16.5px] font-extrabold text-[#062B4A] mt-0 mb-1.5">{f.title}</h3>
-            <p class="text-[14px] text-[#3D5068] leading-relaxed m-0">{f.text}</p>
+        {features.filter(f => f.side === 'left').map((f, __psIdx) => (
+          <li class="relative bg-[#F7F5EF] rounded-[18px] border border-[#DCE4DF] p-5 shadow-[0_12px_35px_rgba(18,63,70,0.08)] lg:text-right" data-ps={`src/components/home/v2/DevicesSection.astro:iln4gl-${__psIdx}`}>
+            <span class="hidden lg:block absolute top-1/2 -right-[42px] w-[42px] h-[2px] bg-gradient-to-l from-[#2F6870]/50 to-transparent" aria-hidden="true" data-ps={`src/components/home/v2/DevicesSection.astro:7a632f-${__psIdx}`}></span>
+            <h3 class="text-[16.5px] font-extrabold text-[#123F46] mt-0 mb-1.5" data-ps={`src/components/home/v2/DevicesSection.astro:w6ie0c-${__psIdx}`}>{f.title}</h3>
+            <p class="text-[14px] text-[#5D6E70] leading-relaxed m-0" data-ps={`src/components/home/v2/DevicesSection.astro:yro3z0-${__psIdx}`}>{f.text}</p>
           </li>
         ))}
       </ul>
 
       {/* Zentrales Gerät */}
-      <div class="order-1 lg:order-2 flex justify-center">
-        <div class="relative">
-          <svg viewBox="0 0 260 260" class="w-[220px] sm:w-[260px] h-auto drop-shadow-[0_18px_36px_rgba(6,43,74,0.18)]" role="img" aria-label="Rauchwarnmelder mit Statusanzeige in Draufsicht">
+      <div class="order-1 lg:order-2 flex justify-center w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[360px] mx-auto" data-ps="src/components/home/v2/DevicesSection.astro:67nx4a">
+        <div class="smoke-wrap" data-ps="src/components/home/v2/DevicesSection.astro:67nx4b">
+          <div class="smoke-glow" data-ps="src/components/home/v2/DevicesSection.astro:67nx4a"></div>
+
+          <svg class="smoke" viewBox="0 0 520 520" aria-label="Rauchwarnmelder">
             <defs>
-              <radialGradient id="mk-face" cx="42%" cy="36%" r="80%">
-                <stop offset="0%" stop-color="#ffffff" />
-                <stop offset="70%" stop-color="#f6f8fa" />
-                <stop offset="100%" stop-color="#e3e9ef" />
+              <radialGradient id="case" cx="42%" cy="30%" r="72%">
+                <stop offset="0" stop-color="#fff"/>
+                <stop offset=".56" stop-color="#fafafa"/>
+                <stop offset=".82" stop-color="#edf1f2"/>
+                <stop offset="1" stop-color="#d8e0e2"/>
               </radialGradient>
+
+              <radialGradient id="face" cx="45%" cy="35%" r="70%">
+                <stop offset="0" stop-color="#fff"/>
+                <stop offset="1" stop-color="#f1f3f3"/>
+              </radialGradient>
+
+              <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset=".55" stop-color="#e9edef"/>
+                <stop offset="1" stop-color="#cdd5d8"/>
+              </linearGradient>
+
+              <radialGradient id="led" cx="35%" cy="30%">
+                <stop offset="0" stop-color="#b8ff86"/>
+                <stop offset=".48" stop-color="#62d531"/>
+                <stop offset="1" stop-color="#39a914"/>
+              </radialGradient>
+
+              <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+                <feDropShadow dx="0" dy="22" stdDeviation="20"
+                  flood-color="#163943" flood-opacity=".18"/>
+              </filter>
+
+              <filter id="soft">
+                <feGaussianBlur stdDeviation="11"/>
+              </filter>
             </defs>
-            <circle cx="130" cy="130" r="122" fill="url(#mk-face)" stroke="#cfd9e3" stroke-width="3" />
-            <circle cx="130" cy="130" r="106" fill="none" stroke="#dde5ec" stroke-width="10" />
-            {/* Lüftungsschlitze */}
-            <g stroke="#b8c5d1" stroke-width="5" stroke-linecap="round">
-              <path d="M74 62 a94 94 0 0 1 34 -18" />
-              <path d="M152 44 a94 94 0 0 1 34 18" />
-              <path d="M48 130 a82 82 0 0 1 8 -30" />
-              <path d="M212 130 a82 82 0 0 0 -8 -30" />
-              <path d="M74 198 a94 94 0 0 0 34 18" />
-              <path d="M152 216 a94 94 0 0 0 34 -18" />
+
+            <!-- soft green aura -->
+            <circle cx="260" cy="260" r="222" fill="#79db55" opacity=".07"/>
+            <circle cx="260" cy="260" r="205" fill="none"
+              stroke="#84de63" stroke-width="10" opacity=".18"/>
+
+            <!-- main body -->
+            <g filter="url(#shadow)">
+              <circle cx="260" cy="255" r="180" fill="url(#case)"
+                stroke="#dbe3e5" stroke-width="4"/>
+
+              <circle cx="260" cy="250" r="153"
+                fill="none" stroke="#e8edef" stroke-width="2"/>
+
+              <!-- vent ring -->
+              <g fill="none" stroke="#c7cfd1" stroke-width="16"
+                 stroke-linecap="round">
+                <path d="M148 177 A140 140 0 0 1 205 134"/>
+                <path d="M315 134 A140 140 0 0 1 372 177"/>
+                <path d="M394 232 A140 140 0 0 1 394 288"/>
+                <path d="M372 343 A140 140 0 0 1 315 386"/>
+                <path d="M205 386 A140 140 0 0 1 148 343"/>
+                <path d="M126 288 A140 140 0 0 1 126 232"/>
+              </g>
+
+              <!-- dark inner vent -->
+              <g fill="none" stroke="#8f999c" stroke-width="6"
+                 stroke-linecap="round" opacity=".78">
+                <path d="M149 177 A140 140 0 0 1 205 135"/>
+                <path d="M315 135 A140 140 0 0 1 371 177"/>
+                <path d="M371 343 A140 140 0 0 1 315 385"/>
+                <path d="M205 385 A140 140 0 0 1 149 343"/>
+              </g>
+
+              <!-- front plate -->
+              <circle cx="260" cy="255" r="102"
+                fill="url(#face)" stroke="#e6eaeb" stroke-width="3"/>
+
+              <ellipse cx="230" cy="205" rx="64" ry="32"
+                fill="#fff" opacity=".38"/>
+
+              <!-- status button -->
+              <circle cx="260" cy="222" r="21"
+                fill="#effce9" stroke="#8cdb69" stroke-width="4"/>
+              <circle cx="260" cy="222" r="13"
+                fill="url(#led)"/>
+              <circle cx="255" cy="217" r="4" fill="#d9ffc7" opacity=".9"/>
+
+              <!-- three sensor ports -->
+              <circle cx="225" cy="289" r="8" fill="#b6c6c8"/>
+              <circle cx="260" cy="300" r="8" fill="#aebfc2"/>
+              <circle cx="295" cy="289" r="8" fill="#b6c6c8"/>
+
+              <!-- small side details -->
+              <circle cx="164" cy="255" r="5" fill="#9fa9ab"/>
+              <circle cx="356" cy="255" r="5" fill="#9fa9ab"/>
+
+              <!-- lower housing lip -->
+              <path d="M133 326
+                       C166 393 220 424 260 425
+                       C300 424 354 393 387 326"
+                fill="none" stroke="url(#edge)"
+                stroke-width="11" stroke-linecap="round"/>
             </g>
-            {/* Testfläche */}
-            <circle cx="130" cy="130" r="62" fill="#ffffff" stroke="#dbe3ea" stroke-width="3" />
-            <circle cx="130" cy="130" r="62" fill="none" stroke="#eef2f6" stroke-width="10" />
-            {/* Status-LED + Schallöffnung */}
-            <circle cx="130" cy="102" r="7" fill="#25b94b" stroke="#1a8f3a" stroke-width="2" />
-            <circle cx="130" cy="102" r="11" fill="none" stroke="#25b94b" stroke-width="1.6" opacity=".45" />
-            <g fill="#c3cedb">
-              <circle cx="112" cy="146" r="4" /><circle cx="130" cy="152" r="4" /><circle cx="148" cy="146" r="4" />
-            </g>
+
+            <!-- tiny green glow -->
+            <circle cx="260" cy="222" r="34"
+              fill="#65d43c" opacity=".12" filter="url(#soft)"/>
           </svg>
-          {/* Badge */}
-          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap inline-flex items-center gap-1.5 bg-[#062B4A] text-white text-[12px] font-extrabold px-3.5 py-1.5 rounded-full shadow-lg">
-            <svg class="w-3.5 h-3.5 text-[#8FD97A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+
+          <div class="din-badge" data-ps="src/components/home/v2/DevicesSection.astro:67nx4b">
+            <span data-ps="src/components/home/v2/DevicesSection.astro:ikcusv">✓</span>
             DIN EN 14604
-          </span>
+          </div>
         </div>
       </div>
 
       {/* Callouts rechts */}
       <ul class="flex flex-col gap-5 list-none p-0 m-0 order-3">
-        {features.filter(f => f.side === 'right').map((f) => (
-          <li class="relative bg-white rounded-[18px] border border-[#DCE5EF] p-5 shadow-[0_6px_20px_rgba(6,43,74,0.05)]">
-            <span class="hidden lg:block absolute top-1/2 -left-[42px] w-[42px] h-[2px] bg-gradient-to-r from-[#63c62f]/70 to-transparent" aria-hidden="true"></span>
-            <h3 class="text-[16.5px] font-extrabold text-[#062B4A] mt-0 mb-1.5">{f.title}</h3>
-            <p class="text-[14px] text-[#3D5068] leading-relaxed m-0">{f.text}</p>
+        {features.filter(f => f.side === 'right').map((f, __psIdx) => (
+          <li class="relative bg-[#F7F5EF] rounded-[18px] border border-[#DCE4DF] p-5 shadow-[0_12px_35px_rgba(18,63,70,0.08)]" data-ps={`src/components/home/v2/DevicesSection.astro:iln4gm-${__psIdx}`}>
+            <span class="hidden lg:block absolute top-1/2 -left-[42px] w-[42px] h-[2px] bg-gradient-to-r from-[#2F6870]/50 to-transparent" aria-hidden="true" data-ps={`src/components/home/v2/DevicesSection.astro:7a632d-${__psIdx}`}></span>
+            <h3 class="text-[16.5px] font-extrabold text-[#123F46] mt-0 mb-1.5" data-ps={`src/components/home/v2/DevicesSection.astro:w6ie0d-${__psIdx}`}>{f.title}</h3>
+            <p class="text-[14px] text-[#5D6E70] leading-relaxed m-0" data-ps={`src/components/home/v2/DevicesSection.astro:zhosyk-${__psIdx}`}>{f.text}</p>
           </li>
         ))}
       </ul>
     </div>
 
-    <p class="text-center text-[13.5px] text-[#5A7191] mt-10 mb-0">
-      Hersteller nennen wir Ihnen transparent im Angebot – abhängig von Verfügbarkeit und Anforderung Ihres Objekts.
+    <p class="text-center text-[13.5px] text-[#5D6E70] mt-10 mb-0" data-ps="src/components/home/v2/DevicesSection.astro:zhosyj">
+      Hersteller nennen wir Ihnen transparent im Angebot, abhängig von Verfügbarkeit und Anforderung Ihres Objekts.
     </p>
   </Container>
 </section>
+
+<style>
+.smoke-wrap{
+  position:relative;
+  width:min(100%,520px);
+  margin:auto;
+  display:grid;
+  justify-items:center;
+  font-family:Inter,Arial,sans-serif
+}
+.smoke{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:auto;
+  display:block
+}
+.smoke-glow{
+  position:absolute;
+  z-index:1;
+  width:76%;
+  aspect-ratio:1;
+  top:12%;
+  border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(76,207,42,.12),
+    rgba(76,207,42,.05) 55%,
+    transparent 72%);
+  filter:blur(13px)
+}
+.din-badge{
+  position:relative;
+  z-index:4;
+  margin-top:-28px;
+  padding:7px 14px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#0d5861,#083c45);
+  color:#fff;
+  box-shadow:0 6px 14px rgba(7,48,56,.2);
+  font-size:11.5px;
+  letter-spacing:0.02em;
+  line-height:1;
+  font-weight:800;
+  width:fit-content;
+}
+.din-badge span{
+  color:#62d62d;
+  font-size:13.5px;
+}
+@media(max-width:600px){
+  .smoke-wrap{width:min(94vw,400px)}
+  .din-badge{
+    margin-top:-22px;
+    padding:6px 12px;
+    font-size:10.5px;
+    gap:5px;
+  }
+  .din-badge span{
+    font-size:12px;
+  }
+}
+</style>
