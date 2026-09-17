@@ -1,5 +1,12 @@
 # Apache-Konfiguration (ALL-INKL / kasserver.com)
 
+# --- HTTPS erzwingen ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
 # --- MIME-Typen ---
 AddType image/avif .avif
 AddType image/webp .webp
