@@ -13,7 +13,7 @@ import remarkGfm from 'remark-gfm';
 
 import remarkToc from './src/plugins/remark-toc.mjs';
 
-const siteUrl = process.env.SITE_URL || 'https://example.com';
+const siteUrl = process.env.SITE_URL || 'https://rauchmelder-service-berlin.de';
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 
 // Scan pages once at config load for noIndex={true} so we can exclude them
