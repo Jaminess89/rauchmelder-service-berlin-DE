@@ -1,0 +1,27 @@
+# Apache-Konfiguration (ALL-INKL / kasserver.com)
+
+# --- MIME-Typen ---
+AddType image/avif .avif
+AddType image/webp .webp
+
+# --- Standard-Datei & 404 ---
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# --- Browser-Caching ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # Bild-Dateinamen sind nicht gehasht -> moderates Caching
+  ExpiresByType image/avif "access plus 7 days"
+  ExpiresByType image/webp "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# --- Kompression ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
