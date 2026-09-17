@@ -28,18 +28,8 @@ const {
   noIndex,
 } = Astro.props;
 
-// Environment variables for auto-generated OG images
-const ACCOUNT_ID = import.meta.env.ACCOUNT_ID || '';
-const SITE_ID = import.meta.env.SITE_ID || '';
-const OG_IMAGE_CDN_URL = import.meta.env.OG_IMAGE_CDN_URL || 'https://pagesmith-cdn.com';
-
-// Auto-generate OG image URL
-const pathname = Astro.url.pathname;
-const slug = pathname === '/' ? 'index' : pathname.replace(/^\/|\/$/g, '');
-
-const autoImage = (ACCOUNT_ID && SITE_ID)
-  ? `${OG_IMAGE_CDN_URL}/${ACCOUNT_ID}/${SITE_ID}/${slug}-og.png`
-  : `/${slug === 'index' ? 'home' : slug.split('/')[0]}-og.jpg`;
+// Lokales OG-Bild (wird von scripts/optimize-images.mjs nach public/images/home-og.jpg generiert)
+const autoImage = '/images/home-og.jpg';
 const finalImage = image || autoImage;
 
 // Use provided canonical URL or generate from current path
@@ -84,5 +74,6 @@ const ogImageURL = finalImage.startsWith('http') ? finalImage : new URL(finalIma
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 )}
 
-<link rel="icon" type="image/svg+xml" href="https://pagesmith-cdn.com/2be62e80/favicons/favicon-51473240.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://pagesmith-cdn.com/2be62e80/favicons/apple-touch-icon-51473240.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />

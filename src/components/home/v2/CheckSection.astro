@@ -13,14 +13,28 @@
         <p class="lead" data-ps="src/components/home/v2/CheckSection.astro:lead01">Vier klare Prüfpunkte, damit Sie sofort wissen, was passt, was fehlt und was wirklich gemacht werden muss.</p>
       </div>
       <div class="shrink-0 flex items-center justify-end max-md:hidden" data-ps="src/components/home/v2/CheckSection.astro:headimg01">
-        <img
-          src="https://pagesmith-cdn.com/0c80a694/images/photo_2026-09-14_19-40-13-Photoroom-320.webp"
-          sizes="170px"
-          alt="Rauchmelder"
-          class="w-32 lg:w-40 h-auto object-contain drop-shadow-md select-none pointer-events-none"
-          loading="lazy"
-          data-ps="src/components/home/v2/CheckSection.astro:rmimg01"
-        />
+        <picture style="display:contents">
+          <source
+            type="image/avif"
+            srcset="/images/rauchmelder-freisteller-256.avif 256w, /images/rauchmelder-freisteller-320.avif 320w"
+            sizes="170px"
+          />
+          <source
+            type="image/webp"
+            srcset="/images/rauchmelder-freisteller-256.webp 256w, /images/rauchmelder-freisteller-320.webp 320w"
+            sizes="170px"
+          />
+          <img
+            src="/images/rauchmelder-freisteller-320.webp"
+            width="320"
+            height="251"
+            alt="Rauchmelder"
+            class="w-32 lg:w-40 h-auto object-contain drop-shadow-md select-none pointer-events-none"
+            loading="lazy"
+            decoding="async"
+            data-ps="src/components/home/v2/CheckSection.astro:rmimg01"
+          />
+        </picture>
       </div>
     </div>
 

@@ -5,19 +5,21 @@
   {/* Hintergrund mit Techniker-Freisteller rechts */}
   <div class="mk-hero__bg-wrap" data-ps="src/components/home/v2/HeroSection.astro:bg-wrap">
     <div class="mk-hero__technician-wrap" data-ps="src/components/home/v2/HeroSection.astro:tech-wrap">
-      <img
-        src="https://pagesmith-cdn.com/0c80a694/images/Rauchmelder-anbringen-320-fd126e-320.webp"
-        srcset="https://pagesmith-cdn.com/0c80a694/images/Rauchmelder-anbringen-320-fd126e-320.webp 320w"
-        sizes="100vw"
-        width="320"
-        height="345"
-        alt="Techniker montiert Rauchmelder"
-        class="mk-hero__technician-img"
-        fetchpriority="high"
-        loading="eager"
-        decoding="async"
-        data-ps="src/components/home/v2/HeroSection.astro:img"
-      />
+      <picture style="display:contents">
+        <source type="image/avif" srcset="/images/hero-techniker-320.avif 320w" sizes="100vw" />
+        <source type="image/webp" srcset="/images/hero-techniker-320.webp 320w" sizes="100vw" />
+        <img
+          src="/images/hero-techniker-320.webp"
+          width="320"
+          height="345"
+          alt="Techniker montiert Rauchmelder"
+          class="mk-hero__technician-img"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          data-ps="src/components/home/v2/HeroSection.astro:img"
+        />
+      </picture>
     </div>
     <div class="mk-hero__overlay" data-ps="src/components/home/v2/HeroSection.astro:overlay"></div>
   </div>
