@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rauchmelder-service-berlin.de/sitemap-index.xml
